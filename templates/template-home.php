@@ -121,84 +121,8 @@ get_header();
         </div>
     </section>
 
-    <section class="explore-banner">
-        <div id="explore-splide" class="splide splide-explore">
-            <div class="splide__arrows">
-                <button class="splide__arrow splide__arrow--prev"></button>
-                <button class="splide__arrow splide__arrow--next"></button>
-            </div>
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <!-- Slide 1: Africa -->
-                    <li class="splide__slide">
-                        <div class="banner-slide">
-                            <!-- Full-height banner image -->
-                            <img
-                                src="./images/borana.png"
-                                alt="Africa"
-                                class="banner-img" />
-
-                            <!-- SVG overlay -->
-                            <img
-                                src="./images/Africa.svg"
-                                alt="Africa Map"
-                                class="map-overlay map-africa" />
-
-                            <!-- Slide content -->
-                            <div class="slide-content container">
-                                <div class="text-center banner-gap-bot">
-                                    <span class="banner-tag">I WANT TO EXPLORE</span>
-                                    <h2 class="banner-title">Africa</h2>
-                                    <button class="btn-tilted btn-outline">
-                                        Discover More
-                                    </button>
-                                </div>
-                                <div class="explore-location">
-                                    <img
-                                        src="./images/Location.svg"
-                                        alt="Location"
-                                        class="location-icon" />
-                                    <span class="location-text">Borana, Kenya</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Slide 2: Asia -->
-                    <li class="splide__slide">
-                        <div class="banner-slide">
-                            <img
-                                src="./images/boudha.png"
-                                alt="Asia"
-                                class="banner-img" />
-                            <img
-                                src="./images/Asia.svg"
-                                alt="Asia Map"
-                                class="map-overlay map-asia" />
-
-                            <div class="slide-content container">
-                                <div class="text-center banner-gap-bot">
-                                    <span class="banner-tag">I WANT TO EXPLORE</span>
-                                    <h2 class="banner-title">Asia</h2>
-                                    <button class="btn-tilted btn-outline">
-                                        Discover More
-                                    </button>
-                                </div>
-                                <div class="explore-location">
-                                    <img
-                                        src="./images/Location.svg"
-                                        alt="Location"
-                                        class="location-icon" />
-                                    <span class="location-text">Boudha Stupa, Nepal</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
+    <?php get_template_part('template-parts/content', 'slider'); ?>
+    
     <section id="plan" class="style-section section-padding">
         <div class="container">
             <div class="section-header">
