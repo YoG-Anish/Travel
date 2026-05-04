@@ -38,9 +38,11 @@
                                     <div class="text-center banner-gap-bot">
                                         <span class="banner-tag"><?php the_content(); ?></span>
                                         <h2 class="banner-title"><?php the_title(); ?></h2>
-                                        <a href="<?php the_permalink(); ?>" class="btn btn-outline">
-                                            <?php echo esc_html(get_field('slider_button')); ?>
-                                        </a>
+                                        <button class="btn-tilted btn-primary-i">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php echo esc_html(get_field('slider_button')); ?>
+                                            </a>
+                                        </button>
                                     </div>
                                     <div class="explore-location">
                                         <?php $location_icon_id = get_field('slider_location_icon');

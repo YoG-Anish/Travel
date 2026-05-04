@@ -44,9 +44,11 @@
                         <?php echo get_theme_mod('travel_header_heading'); ?>
                     </h1>
                     <div class="hero-cta">
-                        <a href="<?php echo esc_url(get_theme_mod('travel_header_button_url')); ?>" class="btn btn-primary">
-                            <?php echo esc_html(get_theme_mod('travel_header_button_text')); ?>
-                        </a>
+                        <button class="btn-tilted btn-primary-i">
+                            <a href="<?php echo esc_url(get_theme_mod('travel_header_button_url')); ?>" class="btn btn-primary">
+                                <?php echo esc_html(get_theme_mod('travel_header_button_text')); ?>
+                            </a>
+                        </button>
                     </div>
                 </div>
                 <div class="hero-video">

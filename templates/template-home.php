@@ -122,7 +122,7 @@ get_header();
     </section>
 
     <?php get_template_part('template-parts/content', 'slider'); ?>
-    
+
     <section id="plan" class="style-section section-padding">
         <div class="container">
             <div class="section-header">
@@ -151,134 +151,38 @@ get_header();
                 </div>
                 <div class="splide__track">
                     <div class="splide__list">
-                        <!-- Slide 1 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/family.png" alt="Family Travel" />
-                                    </a>
-                                    <h3 class="style-title">Family Travel</h3>
+                        <?php
+                        $style_query = new WP_Query(array(
+                            'post_type' => 'travel_style',
+                            'posts_per_page' => -1,
+                        ));
+                        if ($style_query->have_posts()) :
+                            while ($style_query->have_posts()) : $style_query->the_post();
+                        ?>
+                                <div class="splide__slide">
+                                    <div class="style-card">
+                                        <div class="style-image-wrapper">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php if (has_post_thumbnail()) : ?>
+                                                    <?php the_post_thumbnail(); ?>
+                                                <?php endif; ?>
+                                            </a>
+                                            <h3 class="style-title"><?php the_title(); ?></h3>
+                                        </div>
+                                        <p class="style-text">
+                                            <?php echo wp_trim_words(get_the_content(), 12, '...'); ?>
+                                        </p>
+                                        <button class="btn-tilted btn-primary-i">
+                                            <a href="<?php the_permalink(); ?>" class="discover-link">Discover More</a>
+                                        </button>
+                                    </div>
                                 </div>
-                                <p class="style-text">
-                                    Luxury family safaris and inspiring wildlife adventures
-                                    with a positive impact.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/private.png" alt="Private Travel" />
-                                    </a>
-                                    <h3 class="style-title">Private Travel</h3>
-                                </div>
-                                <p class="style-text">
-                                    Quality time with family and friends, complete flexibility
-                                    and exclusive use safari camps.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/nature.png" alt="Discover Nature" />
-                                    </a>
-                                    <h3 class="style-title">Discover Nature</h3>
-                                </div>
-                                <p class="style-text">
-                                    Quality time with family and friends, complete flexibility
-                                    and exclusive use safari camps.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Slide 1 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/family.png" alt="Family Travel" />
-                                    </a>
-                                    <h3 class="style-title">Family Travel</h3>
-                                </div>
-                                <p class="style-text">
-                                    Luxury family safaris and inspiring wildlife adventures
-                                    with a positive impact.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/nature.png" alt="Discover Nature" />
-                                    </a>
-                                    <h3 class="style-title">Discover Nature</h3>
-                                </div>
-                                <p class="style-text">
-                                    Quality time with family and friends, complete flexibility
-                                    and exclusive use safari camps.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Slide 1 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/family.png" alt="Family Travel" />
-                                    </a>
-                                    <h3 class="style-title">Family Travel</h3>
-                                </div>
-                                <p class="style-text">
-                                    Luxury family safaris and inspiring wildlife adventures
-                                    with a positive impact.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="splide__slide">
-                            <div class="style-card">
-                                <div class="style-image-wrapper">
-                                    <a href="#">
-                                        <img src="./images/nature.png" alt="Discover Nature" />
-                                    </a>
-                                    <h3 class="style-title">Discover Nature</h3>
-                                </div>
-                                <p class="style-text">
-                                    Quality time with family and friends, complete flexibility
-                                    and exclusive use safari camps.
-                                </p>
-                                <button class="btn-tilted btn-primary-i">
-                                    Discover More
-                                </button>
-                            </div>
-                        </div>
+                        <?php endwhile;
+                            wp_reset_postdata();
+                        else :
+                            echo '<p>No styles found.</p>';
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -296,58 +200,38 @@ get_header();
                 </h2>
             </div>
             <div class="stories-grid">
-                <article class="story-item">
-                    <div class="story-image">
-                        <a href="#">
-                            <img src="./images/family.png" alt="Story" />
-                        </a>
-                    </div>
-                    <h3 class="story-title">
-                        How to choose a responsible tour operator
-                    </h3>
-                    <p class="story-meta">ABOUT NIARRA TRAVEL</p>
-
-                    <div class="story-footer">
-                        <span class="line"></span>
-                        <a href="#" class="read-more">
-                            Read Story <span class="arrow">></span>
-                        </a>
-                    </div>
-                </article>
-                <article class="story-item">
-                    <div class="story-image">
-                        <a href="#">
-                            <img src="./images/diving.png" alt="Story" />
-                        </a>
-                    </div>
-                    <h3 class="story-title">
-                        Healthy waters of Slovenia with freediver Alenka Artnik
-                    </h3>
-                    <p class="story-meta">ABOUT NIARRA TRAVELS</p>
-                    <div class="story-footer">
-                        <span class="line"></span>
-                        <a href="#" class="read-more">
-                            Read Story <span class="arrow">></span>
-                        </a>
-                    </div>
-                </article>
-                <article class="story-item">
-                    <div class="story-image">
-                        <a href="#">
-                            <img src="./images/fire.png" alt="Story" />
-                        </a>
-                    </div>
-                    <h3 class="story-title">
-                        Why the travel industry needs greater transparency
-                    </h3>
-                    <p class="story-meta">ABOUT NIARRA TRAVELS</p>
-                    <div class="story-footer">
-                        <span class="line"></span>
-                        <a href="#" class="read-more">
-                            Read Story <span class="arrow">></span>
-                        </a>
-                    </div>
-                </article>
+                <?php
+                $story_query = new WP_Query(array(
+                    'post_type' => 'travel_story',
+                    'posts_per_page' => 3,
+                ));
+                if ($story_query->have_posts()) :
+                    while ($story_query->have_posts()) : $story_query->the_post(); ?>
+                        <article class="story-item">
+                            <div class="story-image">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php endif; ?>
+                                </a>
+                            </div>
+                            <h3 class="story-title">
+                                <?php the_title(); ?>
+                            </h3>
+                            <p class="story-meta"><?php echo esc_html(get_field('about_author_text')); ?></p>
+                            <div class="story-footer">
+                                <span class="line"></span>
+                                <a href="<?php the_permalink(); ?>" class="read-more">
+                                    <?php echo esc_html(get_field('story_button')); ?> <span class="arrow">></span>
+                                </a>
+                            </div>
+                        </article>
+                <?php endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>No stories found.</p>';
+                endif;
+                ?>
             </div>
         </div>
     </section>
