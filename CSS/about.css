@@ -1,0 +1,138 @@
+.about-head-section {
+  background: var(--bg-gray);
+  padding-bottom: clamp(3rem, 4vw, 6rem);
+  padding-top: var(--gap-top-bottom);
+}
+.about-video-section {
+  background: linear-gradient(to bottom, var(--bg-gray) 50%, var(--white) 50%);
+}
+/* wrapper must control positioning */
+.about-video-wrapper {
+  position: relative;
+}
+
+/* image */
+.about-video-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+/* overlay container */
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-description-wrapper {
+  max-width: 79rem;
+  margin: clamp(3rem, 4vw, 6rem) auto var(--gap-top-bottom);
+}
+
+.about-description-wrapper p {
+  font-family: var(--extra-font);
+  color: var(--text-dark);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin-bottom: 2.8rem;
+}
+
+.book-us-section {
+  background: var(--bg-gray);
+}
+
+.book-us-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Gives content slightly more room */
+  gap: 3rem;
+  align-items: center;
+  margin: 0 auto;
+}
+.book-us-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.book-us-card h3 {
+  font-family: var(--title-font);
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+}
+.book-us-card p {
+  font-family: var(--extra-font);
+  color: var(--text-dark);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0;
+}
+/* 1. The Main Grid */
+
+/* 2. Right Side Image Container */
+.book-us-images {
+  position: relative;
+  width: 100%;
+  /* We remove the fixed aspect-ratio here and let the image handle it */
+}
+
+/* Reef (The background image) */
+.reef-img {
+  position: relative; /* Changed from absolute */
+  display: block;
+  width: 70%; /* Leaves room for the tiger to hang off the left */
+  margin-left: auto; /* Aligns the reef to the right edge */
+  height: auto;
+  z-index: 1;
+  aspect-ratio: 37 / 70;
+}
+
+/* Tiger (The overlapping image) */
+.tiger-img {
+  position: absolute;
+  width: 56%; /* Relative to the .book-us-images container */
+  height: auto;
+
+  /* Positioning logic */
+  left: 0; /* Starts at the left edge of the container */
+  top: 20%; /* Distance from the top */
+
+  transform: rotate(-5deg);
+  z-index: 2;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+
+  aspect-ratio: 30 / 44;
+}
+
+/* Hover effect for a little extra polish */
+/* .book-us-images:hover .tiger-img {
+  transform: rotate(0deg) scale(1.02);
+} */
+
+@media (max-width: 768px) {
+  .book-us-grid {
+    grid-template-columns: 1fr; /* Stacks vertically */
+  }
+
+  .book-us-images {
+    max-width: 500px; /* Prevents images from getting too huge on tablets */
+    margin: 40px auto 0; /* Centers the image block and adds top spacing */
+    padding-bottom: 20px; /* Space for the rotated edge */
+  }
+
+  .reef-img {
+    width: 75%; /* Slightly smaller to ensure tiger has room on screen edges */
+  }
+
+  .tiger-img {
+    width: 50%;
+    left: 5%; /* Adjusted for centered layout */
+  }
+}

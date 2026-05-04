@@ -1,0 +1,142 @@
+/* ==============================
+   STORIES SECTION
+============================== */
+.stories-section {
+  background: var(--bg-gray);
+}
+
+/* GRID LAYOUT */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+/* ==============================
+   STORY CARD
+============================== */
+.story-item {
+  overflow: hidden; /* ensures image stays inside */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 33rem; /* Figma width */
+}
+
+/* ==============================
+   IMAGE WRAPPER
+============================== */
+.story-image {
+  width: 100%;
+  height: 44rem; /* Figma height */
+  overflow: hidden; /* clip rotated image */
+  position: relative;
+}
+
+/* IMAGE ITSELF */
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* rotate and shrink enough to stay inside container */
+  transform: rotate(-4deg) scale(0.92);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+/* STRAIGHTEN IMAGE ON HOVER */
+.story-image:hover img {
+  transform: rotate(0deg) scale(1);
+}
+
+/* ==============================
+   STORY TITLE
+============================== */
+.story-title {
+  font-family: var(--title-font);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 1rem 0;
+}
+
+/* ==============================
+   STORY META
+============================== */
+.story-meta {
+  font-family: var(--body-font);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  padding-top: 1rem;
+}
+
+/* ==============================
+   STORY FOOTER
+============================== */
+.story-footer {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.story-footer .line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--primary-green);
+  margin-right: 1rem;
+}
+
+/* READ MORE LINK */
+.read-more {
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.arrow {
+  padding-left: 0.5rem;
+}
+
+.read-more:hover {
+  color: var(--hover-green);
+}
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+============================== */
+@media (max-width: 1200px) {
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+    display: flex; /* use flexbox for centering */
+    flex-wrap: wrap; /* allow wrapping */
+    justify-content: center; /* center the items */
+  }
+}
+
+@media (max-width: 768px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    display: flex; /* use flexbox for centering */
+    flex-wrap: wrap; /* allow wrapping */
+    justify-content: center; /* center the items */
+  }
+
+  .story-item {
+    width: 80%; /* two items per row */
+    margin: 2rem auto; /* center each item */
+  }
+
+  .story-image {
+    height: auto; /* keep natural height */
+  }
+}

@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel | Purposeful Journeys</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/base.css" />
+    <link rel="stylesheet" href="./CSS/hero.css" />
+    <link rel="stylesheet" href="./CSS/button.css" />
+    <link rel="stylesheet" href="./CSS/nav.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./CSS/features.css" />
+    <link rel="stylesheet" href="./CSS/places.css" />
+    <link rel="stylesheet" href="./CSS/slider.css" />
+    <link rel="stylesheet" href="./CSS/overflow.css" />
+    <link rel="stylesheet" href="./CSS/stories.css" />
+    <link rel="stylesheet" href="./CSS/testimonials.css" />
+    <link rel="stylesheet" href="./CSS/bgoverlap.css" />
+    <link rel="stylesheet" href="./CSS/form.css" />
+    <link rel="stylesheet" href="./CSS/contact.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  </head>
+  <body>
+    <header id="home" class="hero-section">
+      <img src="./images/banner.svg" alt="background" class="hero-bg" />
+
+      <div class="container hero-container">
+        <div class="logo-wrapper">
+          <a href="./index.html">
+            <img src="./images/logo.svg" alt="travel" class="nav-logo" />
+          </a>
+        </div>
+        <div class="hero-body">
+          <div class="hero-content">
+            <span class="hero-subtitle">
+              CONNECTING YOUR JOURNEY WITH PURPOSE
+            </span>
+            <h1 class="hero-title">
+              <span class="highlight">Unforgettable</span> Travel <br />
+              Experiences With A <br />
+              Positive Impact
+            </h1>
+            <div class="hero-cta">
+              <button class="btn-tilted btn-primary">Discover More</button>
+            </div>
+          </div>
+
+          <div class="hero-video">
+            <div class="video-wrapper">
+              <div class="dots-circle"></div>
+              <button class="play-circle" aria-label="Play Video">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="main-navigation">
+      <div class="overflow-contain">
+        <div class="container nav-container">
+          <div class="nav-brand">
+            <a href="./index.html">
+              <img
+                src="./images/logo_green.svg"
+                alt="travel"
+                class="nav-logo"
+              />
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="./things-to-do.html" class="nav-link">THINGS TO DO</a>
+            </li>
+            <li class="nav-item">
+              <a href="./places-to-go.html" class="nav-link">PLACES TO GO</a>
+            </li>
+            <li class="nav-item">
+              <a href="./plan-your-trip.html" class="nav-link">
+                PLAN YOUR TRIP
+              </a>
+            </li>
+          </ul>
+
+          <div class="nav-icons">
+            <div class="icon menu-icon" id="hamburger" aria-label="Menu">
+              <img src="./images/Menu.svg" alt="menu" />
+            </div>
+
+            <a class="icon search-icon" href="#">
+              <img src="./images/Search.svg" />
+            </a>
+            <a class="icon heart-icon" href="#">
+              <img src="./images/Heart.svg" />
+            </a>
+            <a class="icon account-icon" href="#">
+              <img src="./images/User.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="side-menu" id="sideMenu">
+      <div class="side-menu-header">
+        <span class="close-btn" id="closeMenu">&times;</span>
+      </div>
+
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+      <section id="things-to-do" class="features-section section-padding">
+        <div class="container features-grid">
+          <div class="features-intro">
+            <span class="section-tag">FIND INSPIRATION FOR YOUR TRIP</span>
+            <h2 class="section-heading">
+              Tailored Travel <br />
+              Guided By <span class="highlight">Experts</span> <br />
+              And Powered By <br />
+              Technology
+            </h2>
+            <p class="section-text">
+              If you're looking for that perfect green and safe ossis, you've
+              come to the right place. Slovenia is the green heart of Europe,
+              where everyone can find sormething for themselves
+            </p>
+            <p class="section-text">
+              We are ready to offer you the best we have With great deal of
+              responsibility, your visit to flavenia will be enjoyable and
+              unforgettabile
+            </p>
+          </div>
+          <div class="features-cards">
+            <div class="feature-card">
+              <div class="feature-icon icon-person">
+                <img src="./images/Service.svg" alt="service" />
+              </div>
+              <h3 class="feature-card-title">Personalized Service</h3>
+              <p class="feature-card-desc">
+                One-to-one service designed to fit your needs and preferences,
+                with around-the-clock support while you travel.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon icon-tech">
+                <img
+                  src="./images/Mobile Navigator.svg"
+                  alt="mobile navigator"
+                />
+              </div>
+              <h3 class="feature-card-title">Technology-Driven</h3>
+              <p class="feature-card-desc">
+                Easy-to-use tools to keep trip details at your fingertips and
+                simplify your travel.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon icon-connections">
+                <img
+                  src="./images/Connected People.svg"
+                  alt="connected people"
+                />
+              </div>
+              <h3 class="feature-card-title">Insider Connections</h3>
+              <p class="feature-card-desc">
+                We leverage our global network to provide preferred rates,
+                upgrades, and experiences you won't find online.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon icon-employee">
+                <img src="./images/Name Tag.svg" alt="name tag" />
+              </div>
+              <h3 class="feature-card-title">Employee-Owned</h3>
+              <p class="feature-card-desc">
+                We leverage our global network to provide preferred rates,
+                upgrades, and experiences you won't find online.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="places" class="places-section section-padding bg-light">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">GET INSPIRED</span>
+            <h2 class="section-heading">
+              <span class="highlight">Inspiring</span> Places
+            </h2>
+            <p class="section-desc desc-width">
+              Wherever the path may lead you in the future, you will always find
+              something to make your heart sing. The greatest Slovenian
+              treasures await. How will you feel Slovenia?
+            </p>
+          </div>
+          <div class="places-grid">
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="explore-banner">
+        <div id="explore-splide" class="splide splide-explore">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev"></button>
+            <button class="splide__arrow splide__arrow--next"></button>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <!-- Slide 1: Africa -->
+              <li class="splide__slide">
+                <div class="banner-slide">
+                  <!-- Full-height banner image -->
+                  <img
+                    src="./images/borana.png"
+                    alt="Africa"
+                    class="banner-img"
+                  />
+
+                  <!-- SVG overlay -->
+                  <img
+                    src="./images/Africa.svg"
+                    alt="Africa Map"
+                    class="map-overlay map-africa"
+                  />
+
+                  <!-- Slide content -->
+                  <div class="slide-content container">
+                    <div class="text-center banner-gap-bot">
+                      <span class="banner-tag">I WANT TO EXPLORE</span>
+                      <h2 class="banner-title">Africa</h2>
+                      <button class="btn-tilted btn-outline">
+                        Discover More
+                      </button>
+                    </div>
+                    <div class="explore-location">
+                      <img
+                        src="./images/Location.svg"
+                        alt="Location"
+                        class="location-icon"
+                      />
+                      <span class="location-text">Borana, Kenya</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Slide 2: Asia -->
+              <li class="splide__slide">
+                <div class="banner-slide">
+                  <img
+                    src="./images/boudha.png"
+                    alt="Asia"
+                    class="banner-img"
+                  />
+                  <img
+                    src="./images/Asia.svg"
+                    alt="Asia Map"
+                    class="map-overlay map-asia"
+                  />
+
+                  <div class="slide-content container">
+                    <div class="text-center banner-gap-bot">
+                      <span class="banner-tag">I WANT TO EXPLORE</span>
+                      <h2 class="banner-title">Asia</h2>
+                      <button class="btn-tilted btn-outline">
+                        Discover More
+                      </button>
+                    </div>
+                    <div class="explore-location">
+                      <img
+                        src="./images/Location.svg"
+                        alt="Location"
+                        class="location-icon"
+                      />
+                      <span class="location-text">Boudha Stupa, Nepal</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan" class="style-section section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">TRAVEL IN STYLE</span>
+            <h2 class="section-heading">
+              Find Travel Inspiration By <span class="highlight">Style</span>
+            </h2>
+            <p class="section-desc desc-width">
+              Wherever the path may lead you in the future, you will always find
+              something to make your heart sing. The greatest Slovenian
+              treasures await. How will you feel Slovenia?
+            </p>
+          </div>
+
+          <div class="splide style-slider">
+            <div class="splide__arrows">
+              <button class="splide__arrow splide__arrow--prev">
+                <img
+                  src="./images/Arrow.png"
+                  class="arrow-plan left-arrow-rotate"
+                  alt="prev"
+                />
+              </button>
+              <button class="splide__arrow splide__arrow--next">
+                <img src="./images/Arrow.png" class="arrow-plan" alt="next" />
+              </button>
+            </div>
+            <div class="splide__track">
+              <div class="splide__list">
+                <!-- Slide 1 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/family.png" alt="Family Travel" />
+                      </a>
+                      <h3 class="style-title">Family Travel</h3>
+                    </div>
+                    <p class="style-text">
+                      Luxury family safaris and inspiring wildlife adventures
+                      with a positive impact.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/private.png" alt="Private Travel" />
+                      </a>
+                      <h3 class="style-title">Private Travel</h3>
+                    </div>
+                    <p class="style-text">
+                      Quality time with family and friends, complete flexibility
+                      and exclusive use safari camps.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/nature.png" alt="Discover Nature" />
+                      </a>
+                      <h3 class="style-title">Discover Nature</h3>
+                    </div>
+                    <p class="style-text">
+                      Quality time with family and friends, complete flexibility
+                      and exclusive use safari camps.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+                <!-- Slide 1 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/family.png" alt="Family Travel" />
+                      </a>
+                      <h3 class="style-title">Family Travel</h3>
+                    </div>
+                    <p class="style-text">
+                      Luxury family safaris and inspiring wildlife adventures
+                      with a positive impact.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/nature.png" alt="Discover Nature" />
+                      </a>
+                      <h3 class="style-title">Discover Nature</h3>
+                    </div>
+                    <p class="style-text">
+                      Quality time with family and friends, complete flexibility
+                      and exclusive use safari camps.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+                <!-- Slide 1 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/family.png" alt="Family Travel" />
+                      </a>
+                      <h3 class="style-title">Family Travel</h3>
+                    </div>
+                    <p class="style-text">
+                      Luxury family safaris and inspiring wildlife adventures
+                      with a positive impact.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="splide__slide">
+                  <div class="style-card">
+                    <div class="style-image-wrapper">
+                      <a href="#">
+                        <img src="./images/nature.png" alt="Discover Nature" />
+                      </a>
+                      <h3 class="style-title">Discover Nature</h3>
+                    </div>
+                    <p class="style-text">
+                      Quality time with family and friends, complete flexibility
+                      and exclusive use safari camps.
+                    </p>
+                    <button class="btn-tilted btn-primary-i">
+                      Discover More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stories-section section-padding bg-light">
+        <div class="container">
+          <div class="section-header center-header">
+            <span class="section-tag">
+              GET A GLIMPSE OF WHAT YOU CAN EXPERIENCE
+            </span>
+            <h2 class="section-heading">
+              Inspiring <span class="highlight">Stories</span>
+            </h2>
+          </div>
+          <div class="stories-grid">
+            <article class="story-item">
+              <div class="story-image">
+                <a href="#">
+                  <img src="./images/family.png" alt="Story" />
+                </a>
+              </div>
+              <h3 class="story-title">
+                How to choose a responsible tour operator
+              </h3>
+              <p class="story-meta">ABOUT NIARRA TRAVEL</p>
+
+              <div class="story-footer">
+                <span class="line"></span>
+                <a href="#" class="read-more">
+                  Read Story <span class="arrow">></span>
+                </a>
+              </div>
+            </article>
+            <article class="story-item">
+              <div class="story-image">
+                <a href="#">
+                  <img src="./images/diving.png" alt="Story" />
+                </a>
+              </div>
+              <h3 class="story-title">
+                Healthy waters of Slovenia with freediver Alenka Artnik
+              </h3>
+              <p class="story-meta">ABOUT NIARRA TRAVELS</p>
+              <div class="story-footer">
+                <span class="line"></span>
+                <a href="#" class="read-more">
+                  Read Story <span class="arrow">></span>
+                </a>
+              </div>
+            </article>
+            <article class="story-item">
+              <div class="story-image">
+                <a href="#">
+                  <img src="./images/fire.png" alt="Story" />
+                </a>
+              </div>
+              <h3 class="story-title">
+                Why the travel industry needs greater transparency
+              </h3>
+              <p class="story-meta">ABOUT NIARRA TRAVELS</p>
+              <div class="story-footer">
+                <span class="line"></span>
+                <a href="#" class="read-more">
+                  Read Story <span class="arrow">></span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section section-padding">
+        <div class="container testimonials-container">
+          <div class="testimonials-wrapper">
+            <div class="testimonials-header">
+              <span class="section-tag">TESTIMONIALS</span>
+              <h2 class="section-heading">
+                What Travellers <br /><span class="highlight"
+                  >Say About Us</span
+                >
+              </h2>
+              <div class="overall-stars big-stars">
+                <img src="./images/Star.svg" alt="*" />
+                <img src="./images/Star.svg" alt="*" />
+                <img src="./images/Star.svg" alt="*" />
+                <img src="./images/Star.svg" alt="*" />
+                <img src="./images/Star.svg" alt="*" />
+              </div>
+              <p class="review-count">
+                Based On <span class="highlight">56 Reviews</span>
+              </p>
+            </div>
+
+            <!-- SPLIDE SLIDER -->
+            <div class="testimonials-slider splide" id="testimonialsSplide">
+              <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                  <img
+                    src="./images/Arrow.png"
+                    class="left-arrow-testimonials left-arrow-rotate"
+                    alt="prev"
+                  />
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                  <img
+                    src="./images/Arrow.png"
+                    class="right-arrow-testimonials"
+                    alt="next"
+                  />
+                </button>
+              </div>
+              <div class="splide__track">
+                <div class="splide__list">
+                  <div class="splide__slide testimonial-card">
+                    <div class="overall-stars small-stars">
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                    </div>
+                    <h4 class="testimonial-title">
+                      Niarra Exceeded All Expectations
+                    </h4>
+                    <p class="testimonial-text">
+                      Niarra Travel exceeded all expectations, providing an
+                      exceptional travel experience that deserves nothing less
+                      than a five-star rating...
+                    </p>
+                    <p class="testimonial-author">
+                      Josh, <span class="testimonial-date">2 days ago</span>
+                    </p>
+                  </div>
+
+                  <div class="splide__slide testimonial-card">
+                    <div class="overall-stars small-stars">
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                    </div>
+                    <h4 class="testimonial-title">
+                      Charlie Did A Fantastic Job Working
+                    </h4>
+                    <p class="testimonial-text">
+                      Charlie did a fantastic job working with the team to plan
+                      an amazing trip. It was so special and the attention to
+                      detail did not disappoint...
+                    </p>
+                    <p class="testimonial-author">
+                      Amber Restine,
+                      <span class="testimonial-date">2 August</span>
+                    </p>
+                  </div>
+                  <div class="splide__slide testimonial-card">
+                    <div class="overall-stars small-stars">
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                    </div>
+                    <h4 class="testimonial-title">
+                      Charlie Did A Fantastic Job Working
+                    </h4>
+                    <p class="testimonial-text">
+                      Charlie did a fantastic job working with the team to plan
+                      an amazing trip. It was so special and the attention to
+                      detail did not disappoint...
+                    </p>
+                    <p class="testimonial-author">
+                      Amber Restine,
+                      <span class="testimonial-date">2 August</span>
+                    </p>
+                  </div>
+                  <div class="splide__slide testimonial-card">
+                    <div class="overall-stars small-stars">
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                    </div>
+                    <h4 class="testimonial-title">
+                      Charlie Did A Fantastic Job Working
+                    </h4>
+                    <p class="testimonial-text">
+                      Charlie did a fantastic job working with the team to plan
+                      an amazing trip. It was so special and the attention to
+                      detail did not disappoint...
+                    </p>
+                    <p class="testimonial-author">
+                      Amber Restine,
+                      <span class="testimonial-date">2 August</span>
+                    </p>
+                  </div>
+                  <div class="splide__slide testimonial-card">
+                    <div class="overall-stars small-stars">
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                      <img src="./images/Star.svg" alt="*" />
+                    </div>
+                    <h4 class="testimonial-title">
+                      Charlie Did A Fantastic Job Working
+                    </h4>
+                    <p class="testimonial-text">
+                      Charlie did a fantastic job working with the team to plan
+                      an amazing trip. It was so special and the attention to
+                      detail did not disappoint...
+                    </p>
+                    <p class="testimonial-author">
+                      Amber Restine,
+                      <span class="testimonial-date">2 August</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-section">
+        <div class="mountain-cloud-bg">
+          <div class="container text-center">
+            <span class="section-tag"> THE WORLD IS AT YOUR FEET </span>
+            <h2 class="section-heading">
+              Receive <span class="highlight">Inspiration</span> In Your Inbox
+            </h2>
+          </div>
+        </div>
+        <div class="cloud-bg">
+          <div class="container newsletter-form-wrapper">
+            <form action="#" class="newsletter-form">
+              <div class="form-row name-row">
+                <div class="input-data">
+                  <input type="text" required />
+                  <label for="">First Name</label>
+                </div>
+                <div class="input-data">
+                  <input type="text" required />
+                  <label for="">Last Name</label>
+                </div>
+              </div>
+
+              <div class="form-row email-row">
+                <div class="input-data">
+                  <input type="text" required />
+                  <label for="">Email Address</label>
+                </div>
+                <div class="input-data-check">
+                  <div class="checkbox-wrapper-15">
+                    <input
+                      class="inp-cbx"
+                      id="cbx-15"
+                      type="checkbox"
+                      style="display: none"
+                    />
+                    <label class="cbx" for="cbx-15">
+                      <span>
+                        <svg width="12px" height="9px" viewbox="0 0 12 9">
+                          <polyline points="1 5 4 8 11 1"></polyline>
+                        </svg>
+                      </span>
+                      <span>I'm happy to receive emails*</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="submit-btn">
+                <div class="input-data">
+                  <button type="submit" class="btn-tilted btn-outline-dark">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-cta-section section-padding bg-accent">
+        <div class="container contact-grid">
+          <div class="contact-text">
+            <h2 class="section-heading">
+              <span class="highlight">Contact</span> A Travel Researcher
+            </h2>
+            <p>We always aim to reply within 24 hours.</p>
+          </div>
+          <div class="contact-options">
+            <div class="contact-option">
+              <img src="./images/Call.svg" alt="Call" />
+              <span class="option-label">Call Us</span>
+              <a href="tel:+18331234567" class="option-value">
+                +1 (833) 123-4567
+              </a>
+            </div>
+            <div class="contact-option">
+              <img src="./images/Email.svg" alt="Email" />
+              <span class="option-label option-email-gap">
+                <a href="mailto:explore@travel.com" class="option-value">
+                  Send Us An Enquiry
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top border-bottom">
+        <div class="container">
+          <ul class="footer-nav">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./things-to-do.html">THINGS TO DO</a></li>
+            <li><a href="./places-to-go.html">PLACES TO GO</a></li>
+            <li><a href="./plan-your-trip.html">PLAN YOUR TRIP</a></li>
+            <li><a href="./contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-main">
+        <div class="container footer-grid">
+          <div class="footer-column">
+            <h4 class="footer-heading">DESTINATION</h4>
+            <ul class="footer-links">
+              <li><a href="about:blank" target="_blank">Africa</a></li>
+              <li><a href="about:blank" target="_blank">Asia</a></li>
+              <li><a href="about:blank" target="_blank">Australasia</a></li>
+              <li><a href="about:blank" target="_blank">Europe</a></li>
+              <li><a href="about:blank" target="_blank">Latin America</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">CALL US</h4>
+            <p class="contacts">
+              <a href="tel:+1833123456">+1 (833) 123 456</a>
+            </p>
+
+            <h4 class="footer-heading">EMAIL US</h4>
+            <p class="contacts">
+              <a href="mailto:explore@travel.com">explore@travel.com</a>
+            </p>
+          </div>
+          <div class="footer-column">
+            <div class="footer-reviews">
+              <span class="stars">
+                <div class="overall-stars mid-stars">
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                </div>
+              </span>
+              <p>Based on <span class="highlight">56 reviews</span></p>
+              <a href="#" class="btn-white"
+                >Review Us On
+                <span class="tiny-star"
+                  ><img src="./images/Star.svg" alt="*"
+                /></span>
+                Trustpilot</a
+              >
+            </div>
+            <div class="social-links">
+              <span class="social-icon">
+                <a href="about:blank" target="_blank">
+                  <img src="./images/Facebook F.svg" alt="Facebook" />
+                </a>
+              </span>
+              <span class="social-icon">
+                <a href="about:blank" target="_blank">
+                  <img src="./images/Instagram.svg" alt="Instagram" />
+                </a>
+              </span>
+              <span class="social-icon">
+                <a href="about:blank" target="_blank">
+                  <img src="./images/LinkedIn.svg" alt="LinkedIn" />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-design">
+          <p>© 2024 Tourist Board. All rights reserved.</p>
+          <a href="./index.html">
+            <img src="./images/logo.svg" alt="travel" class="logo-img" />
+          </a>
+          <ul class="terms-and-policies">
+            <li><a href="about:blank" target="_blank">Terms</a></li>
+            <li><a href="about:blank" target="_blank">Cookie Policy</a></li>
+            <li><a href="about:blank" target="_blank">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="search-modal" id="searchModal">
+      <div class="search-box">
+        <form>
+          <input type="text" placeholder="Search your destination..." />
+          <button type="submit">Search</button>
+        </form>
+
+        <span class="close-search" id="closeSearch">&times;</span>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./Js/footer-seperator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+/* ==============================
+   STYLE CARD SLIDER (Scoped to .style-slider)
+============================== */
+
+/* Slides spacing */
+.style-slider .splide__slide {
+  padding: 0.4rem;
+  box-sizing: border-box;
+  margin-top: 3rem;
+}
+
+/* CARD */
+.style-slider .style-card {
+  background: #fff;
+
+  /* border-radius: 0.2rem; */
+  /* 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+
+  height: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+/* IMAGE */
+.style-slider .style-card img {
+  width: 100%;
+  height: auto; /* scale without cropping */
+  margin-bottom: 2rem;
+  object-fit: contain; /* ensures full image is visible */
+}
+
+/* FLOATING ARROWS */
+.style-slider .splide__arrow {
+  position: absolute;
+  background: #fff;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  /* box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.15); */
+  z-index: 10;
+}
+
+.style-slider .splide__arrow--prev {
+  left: -2.5rem;
+}
+
+.style-slider .splide__arrow--next {
+  right: -2.5rem;
+}
+
+.arrow-plan {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+/* Image wrapper */
+.style-slider .style-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  /* border-radius: 0.5rem; */
+  text-align: center;
+}
+
+/* Title overlay at the top */
+.style-slider .style-image-wrapper .style-title {
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  right: 1rem;
+  color: var(--white);
+  font-size: 3.2rem;
+  font-weight: 700;
+  font-family: var(--title-font);
+  font-style: italic;
+  text-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.style-slider .splide__arrow {
+  padding: 1rem;
+  box-shadow: 0 0 1px var(--text-gray);
+  box-shadow: 0 0 2px var(--text-gray);
+  box-shadow: 0 0 4px var(--text-gray);
+}
+
+.style-text {
+  font-family: var(--extra-font);
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 1024px) {
+  .style-slider .splide__slide {
+    padding: 0.5rem;
+  }
+
+  /* .style-slider .splide__arrow {
+    width: 4rem;
+    height: 4rem;
+  } */
+
+  .style-slider .style-image-wrapper .style-title {
+    font-size: 2.8rem;
+    top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .style-slider .splide__slide {
+    padding: 0.5rem;
+  }
+
+  /* .style-slider .splide__arrow {
+    width: 3.5rem;
+    height: 3.5rem;
+  } */
+
+  .style-slider .style-card img {
+    max-width: 80%; /* shrink proportionally */
+    height: auto;
+  }
+
+  .style-slider .style-image-wrapper .style-title {
+    font-size: 2.4rem;
+    top: 2.5rem;
+  }
+  .style-slider .splide__arrow--prev {
+    left: -1rem;
+  }
+
+  .style-slider .splide__arrow--next {
+    right: -1rem;
+  }
+
+  /* .style-text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  } */
+}
+
+@media (max-width: 480px) {
+  .style-slider .splide__slide {
+    padding: 0.3rem;
+  }
+
+  .style-slider .style-card img {
+    max-width: 100%; /* full width, no cropping */
+    height: auto;
+  }
+
+  .style-slider .style-image-wrapper .style-title {
+    font-size: 2rem;
+    top: 2rem;
+  }
+
+  /* .style-text {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  } */
+  /* 
+  .style-slider .splide__arrow {
+    padding: 1.5rem;
+  } */
+}

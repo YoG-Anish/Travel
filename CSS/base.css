@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/manrope");
+:root {
+  /* Font */
+  --title-font: "Inter", sans-serif;
+  --body-font: "Roboto", sans-serif;
+  --extra-font: "Manrope", sans-serif;
+  /* Colors */
+  --primary-green: #78a02e;
+  --hover-green: #5b791c;
+  --white: #ffffff;
+  --text-dark: #303030;
+  --text-gray: #888888;
+  --bg-gray: #f9f9f9;
+  --bg-yellow: #daddc5;
+  --bg-cloud: #f0eeeb;
+  --bg-green: #283a2c;
+  --gap-side: 13.5rem;
+  --gap-top-bottom: 10rem;
+  --max-width: 1440px;
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 1rem = 10px calculation for easier math */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-dark);
+  background-color: var(--white);
+
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari, Edge */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gap-side);
+}
+
+/* ========================= */
+/* RESPONSIVE BASE STYLES */
+/* ========================= */
+/* Laptop / smaller desktops */
+@media (max-width: 1200px) {
+  :root {
+    --gap-side: 10rem; /* reduce side padding */
+    --gap-top-bottom: 8rem; /* reduce vertical spacing */
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --gap-side: 6rem;
+    --gap-top-bottom: 6rem;
+  }
+
+  body {
+    font-size: 1.4rem; /* slightly smaller text */
+  }
+}
+
+/* Large mobile / portrait tablets */
+@media (max-width: 768px) {
+  :root {
+    --gap-side: 3rem;
+    --gap-top-bottom: 5rem;
+  }
+  html {
+    font-size: 56.25%;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small mobile / phones */
+@media (max-width: 480px) {
+  :root {
+    --gap-side: 3rem;
+    --gap-top-bottom: 5rem;
+  }
+  html {
+    font-size: 50%;
+  }
+  body {
+    font-size: 1.1rem;
+  }
+}

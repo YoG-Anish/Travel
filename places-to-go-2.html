@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel | Purposeful Journeys</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/base.css" />
+    <link rel="stylesheet" href="./CSS/hero.css" />
+    <link rel="stylesheet" href="./CSS/button.css" />
+    <link rel="stylesheet" href="./CSS/nav.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./CSS/features.css" />
+    <link rel="stylesheet" href="./CSS/testimonials.css" />
+    <link rel="stylesheet" href="./CSS/places.css" />
+    <link rel="stylesheet" href="./CSS/pagination.css" />
+    <link rel="stylesheet" href="./CSS/contact.css" />
+    <link rel="stylesheet" href="./CSS/footer.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  </head>
+  <body>
+    <nav class="main-navigation">
+      <div class="overflow-contain">
+        <div class="container nav-container">
+          <div class="nav-brand">
+            <a href="./index.html">
+              <img
+                src="./images/logo_green.svg"
+                alt="travel"
+                class="nav-logo"
+              />
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="./things-to-do.html" class="nav-link">THINGS TO DO</a>
+            </li>
+            <li class="nav-item">
+              <a href="./places-to-go-3.html" class="nav-link active">
+                PLACES TO GO
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./plan-your-trip.html" class="nav-link">
+                PLAN YOUR TRIP
+              </a>
+            </li>
+          </ul>
+
+          <div class="nav-icons">
+            <div class="icon menu-icon" id="hamburger" aria-label="Menu">
+              <img src="./images/Menu.svg" alt="menu" />
+            </div>
+
+            <a class="icon search-icon" href="#">
+              <img src="./images/Search.svg" />
+            </a>
+            <a class="icon heart-icon" href="#">
+              <img src="./images/Heart.svg" />
+            </a>
+            <a class="icon account-icon" href="#">
+              <img src="./images/User.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="side-menu" id="sideMenu">
+      <div class="side-menu-header">
+        <span class="close-btn" id="closeMenu">&times;</span>
+      </div>
+
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <main>
+      <section id="places" class="places-section section-padding bg-light">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">GET INSPIRED</span>
+            <h2 class="section-heading">
+              <span class="highlight">Inspiring</span> Places
+            </h2>
+            <p class="section-desc desc-width">
+              Wherever the path may lead you in the future, you will always find
+              something to make your heart sing. The greatest Slovenian
+              treasures await. How will you feel Slovenia?
+            </p>
+          </div>
+          <div class="places-grid">
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans 1</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans 1</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/piran.png" alt="Piran And Salt Pans" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Piran And Salt Pans 1</h3>
+                <p class="place-text">
+                  Piran, the most beautiful town of Mediterranean Slovenia.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/postojna.png" alt="Postojna Cave" />
+              </a>
+
+              <div class="place-card-content">
+                <h3 class="place-title">Postojna Cave</h3>
+                <p class="place-text">
+                  Postojna Cave and Predjama Castle are world-class attractions!
+                </p>
+              </div>
+            </div>
+            <div class="place-card">
+              <a href="#">
+                <img src="./images/bled.png" alt="Bled" />
+              </a>
+              <div class="place-card-content">
+                <h3 class="place-title">Bled</h3>
+                <p class="place-text">
+                  Lake Bled and a castle perched on a cliff is one of the most
+                  beautiful Alpine resorts in Europe.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pagination-trips" id="pagination-trips"></div>
+        </div>
+      </section>
+      <section class="contact-cta-section section-padding bg-accent">
+        <div class="container contact-grid">
+          <div class="contact-text">
+            <h2 class="section-heading">
+              <span class="highlight">Contact</span> A Travel Researcher
+            </h2>
+            <p>We always aim to reply within 24 hours.</p>
+          </div>
+          <div class="contact-options">
+            <div class="contact-option">
+              <img src="./images/Call.svg" alt="Call" />
+              <span class="option-label">Call Us</span>
+              <a href="tel:+18331234567" class="option-value">
+                +1 (833) 123-4567
+              </a>
+            </div>
+            <div class="contact-option">
+              <img src="./images/Email.svg" alt="Email" />
+              <span class="option-label option-email-gap">
+                <a href="mailto:explore@travel.com" class="option-value">
+                  Send Us An Enquiry
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top border-bottom">
+        <div class="container">
+          <ul class="footer-nav">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+            <li><a href="./things-to-do.html">THINGS TO DO</a></li>
+            <li><a href="./places-to-go-3.html">PLACES TO GO</a></li>
+            <li><a href="./plan-your-trip.html">PLAN YOUR TRIP</a></li>
+            <li><a href="./contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-main">
+        <div class="container footer-grid">
+          <div class="footer-column">
+            <h4 class="footer-heading">DESTINATION</h4>
+            <ul class="footer-links">
+              <li><a href="about:blank" target="_blank">Africa</a></li>
+              <li><a href="about:blank" target="_blank">Asia</a></li>
+              <li><a href="about:blank" target="_blank">Australasia</a></li>
+              <li><a href="about:blank" target="_blank">Europe</a></li>
+              <li><a href="about:blank" target="_blank">Latin America</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="footer-heading">CALL US</h4>
+            <p class="contacts">
+              <a href="tel:+1833123456">+1 (833) 123 456</a>
+            </p>
+
+            <h4 class="footer-heading">EMAIL US</h4>
+            <p class="contacts">
+              <a href="mailto:explore@travel.com">explore@travel.com</a>
+            </p>
+          </div>
+          <div class="footer-column">
+            <div class="footer-reviews">
+              <span class="stars">
+                <div class="overall-stars mid-stars">
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                  <img src="./images/Star.svg" alt="*" />
+                </div>
+              </span>
+              <p>Based on <span class="highlight">56 reviews</span></p>
+              <a href="#" class="btn-white"
+                >Review Us On
+                <span class="tiny-star"
+                  ><img src="./images/Star.svg" alt="*"
+                /></span>
+                Trustpilot</a
+              >
+            </div>
+            <div class="social-links">
+              <span class="social-icon">
+                <a href="about:blank" target="_blank">
+                  <img src="./images/Facebook F.svg" alt="Facebook" />
+                </a>
+              </span>
+              <span class="social-icon">
+                <a href="about:blank" target="_blank">
+                  <img src="./images/Instagram.svg" alt="Instagram" />
+                </a>
+              </span>
+              <span class="social-icon">
+                <a href="about:blank" target="_blank">
+                  <img src="./images/LinkedIn.svg" alt="LinkedIn" />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-design">
+          <p>© 2024 Tourist Board. All rights reserved.</p>
+          <a href="./index.html">
+            <img src="./images/logo.svg" alt="travel" class="logo-img" />
+          </a>
+          <ul class="terms-and-policies">
+            <li><a href="about:blank" target="_blank">Terms</a></li>
+            <li><a href="about:blank" target="_blank">Cookie Policy</a></li>
+            <li><a href="about:blank" target="_blank">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="search-modal" id="searchModal">
+      <div class="search-box">
+        <form>
+          <input type="text" placeholder="Search your destination..." />
+          <button type="submit">Search</button>
+        </form>
+
+        <span class="close-search" id="closeSearch">&times;</span>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./Js/pagination.js"></script>
+    <script src="./Js/footer-seperator.js"></script>
+  </body>
+</html>

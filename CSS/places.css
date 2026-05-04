@@ -1,0 +1,124 @@
+/* ==============================
+   PLACES GRID
+============================== */
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-content: center;
+  padding: 4rem 0 0 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .places-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .place-card {
+    aspect-ratio: auto; /* height adjusts automatically */
+    margin: 0 auto; /* center horizontally */
+  }
+}
+@media (max-width: 768px) {
+  .places-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Mobile */
+@media (max-width: 480px) {
+  .places-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0 0 0;
+  }
+
+  .place-card {
+    max-width: 100%; /* smaller than full width */
+    height: 28rem; /* auto height */
+    margin: 1rem auto; /* center horizontally */
+  }
+
+  .place-card img {
+    width: 100%;
+    height: auto; /* scale proportionally */
+    object-fit: cover; /* do not cut image */
+  }
+
+  .place-card-content {
+    padding: 2rem;
+  }
+
+  .place-title {
+    font-size: 2rem;
+  }
+
+  .place-text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+
+/* ==============================
+   CARD STYLING
+============================== */
+
+.place-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 37 / 55; /* maintains Figma proportions on desktop */
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.place-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.place-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ==============================
+   TEXT OVERLAY
+============================== */
+
+.place-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  color: var(--white);
+  transition: transform 0.4s ease;
+}
+
+.place-title {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  font-family: var(--title-font);
+  text-transform: capitalize;
+}
+
+.place-text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-family: var(--extra-font);
+  letter-spacing: 0;
+}

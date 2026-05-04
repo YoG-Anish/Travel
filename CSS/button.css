@@ -1,0 +1,115 @@
+/* ==============================
+   BASE BUTTON
+============================== */
+button {
+  position: relative;
+  display: inline-block;
+  font-family: var(--title-font);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent;
+  transition: var(--transition);
+  z-index: 0;
+  border-radius: 0.2rem;
+}
+
+/* ==============================
+   SHARED TILTED SHAPE
+============================== */
+.btn-tilted::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: var(--transition);
+  clip-path: polygon(0 0, 94% 0, 100% 100%, 0% 100%);
+}
+
+/* ==============================
+   PRIMARY BUTTON
+============================== */
+.btn-primary,
+.btn-primary-i {
+  border: none;
+}
+
+.btn-primary {
+  padding: 1.4rem 5rem 1.4rem 3rem;
+}
+
+.btn-primary-i {
+  padding: 1.1rem 4rem 1.1rem 2.9rem;
+}
+
+.btn-primary::after,
+.btn-primary-i::after {
+  background: var(--primary-green);
+}
+
+.btn-primary:hover::after,
+.btn-primary-i:hover::after {
+  background: var(--hover-green);
+}
+
+/* ==============================
+   OUTLINE BUTTON
+============================== */
+.btn-outline,
+.btn-outline-dark {
+  padding: 1.4rem 5rem 1.4rem 3rem;
+  background: transparent;
+  border: none;
+}
+
+.btn-outline {
+  color: var(--text-dark);
+}
+
+.btn-outline-dark {
+  color: var(--white);
+}
+
+.btn-outline.btn-tilted::after {
+  background: var(--white);
+}
+
+.btn-outline-dark.btn-tilted::after {
+  background: var(--text-dark);
+}
+
+.btn-outline:hover {
+  color: var(--white);
+}
+
+.btn-outline.btn-tilted:hover::after {
+  background: var(--text-gray);
+}
+
+.btn-outline-dark.btn-tilted:hover::after {
+  background: var(--primary-green);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  button {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-outline-dark {
+    padding: 1.2rem 4rem 1.2rem 2.5rem;
+  }
+
+  .btn-primary-i {
+    padding: 1rem 3.5rem 1rem 2.4rem;
+  }
+}

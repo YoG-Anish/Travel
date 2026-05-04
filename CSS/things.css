@@ -1,0 +1,59 @@
+.things-section {
+  background: var(--bg-gray);
+}
+.things-to-do-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem 3rem;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.things-to-do-card {
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+.things-style-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.things-style-image-wrapper img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  object-fit: contain;
+}
+.things-style-title {
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  right: 1rem;
+  color: var(--white);
+  font-size: 3.2rem;
+  font-weight: 700;
+  font-family: var(--title-font);
+  font-style: italic;
+  text-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.things-to-do-card p {
+  font-family: var(--extra-font);
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .things-to-do-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .things-to-do-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

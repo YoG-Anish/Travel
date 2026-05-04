@@ -1,0 +1,48 @@
+.mountain-cloud-bg {
+  position: relative;
+
+  /* content spacing */
+  min-height: 90rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* push content to bottom */
+  align-items: center; /* center horizontally */
+
+  /* layered backgrounds */
+  background-image: url("../images/cloud.png"), url("../images/mountain.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    top center,
+    bottom center;
+  background-size: cover, cover;
+
+  padding: 0 2rem; /* optional horizontal padding */
+  z-index: 1;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .mountain-cloud-bg {
+    min-height: 70rem;
+    background-position:
+      top center,
+      bottom center;
+    background-size: cover, cover;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .mountain-cloud-bg {
+    min-height: 50rem;
+    background-position:
+      top center,
+      bottom center;
+    background-size: cover, cover;
+  }
+}
+
+/* Optional: style text container */
+.mountain-cloud-bg .container {
+  margin-bottom: 6rem; /* space above mountain */
+}

@@ -1,0 +1,253 @@
+/* --- HERO SECTION --- */
+.hero-section {
+  position: relative;
+  min-height: auto;
+  padding-bottom: 15rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* important */
+}
+
+/* Background image */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark overlay (replaces your gradient) */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* LOGO */
+.logo-wrapper {
+  padding-top: 3rem;
+}
+
+/* ===== LOGO CENTERING RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .logo-wrapper {
+    display: flex;
+    justify-content: center; /* center horizontally */
+  }
+}
+
+/* HERO BODY */
+.hero-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15rem;
+}
+
+/* CONTENT */
+.hero-content {
+  padding-top: var(--gap-top-bottom);
+  max-width: 60rem; /* prevents overflow */
+}
+
+.hero-subtitle {
+  font-family: var(--body-font);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--title-font);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin-top: 3rem;
+  text-transform: capitalize;
+}
+
+.hero-cta {
+  margin-top: 4rem;
+}
+
+/* VIDEO */
+.hero-video {
+  flex-shrink: 0;
+  padding-top: 13.5rem;
+  padding-right: 16.5rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 24rem;
+  height: 24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* DOTS */
+.dots-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.572) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 1.5rem 1.5rem;
+  -webkit-mask-image: radial-gradient(
+    circle,
+    transparent 5.5rem,
+    var(--text-dark) 5.6rem
+  );
+  mask-image: radial-gradient(
+    circle,
+    transparent 5.5rem,
+    var(--text-dark) 5.6rem
+  );
+}
+
+/* PLAY BUTTON */
+.play-circle {
+  width: 12rem;
+  height: 12rem;
+  background-color: var(--primary-green);
+  border: 3.4rem solid var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: var(--transition);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.play-circle:hover {
+  transform: scale(1.1);
+}
+
+.play-circle i {
+  color: var(--white);
+  font-size: 2rem;
+  margin-left: 0.5rem; /* Adjust for better centering */
+}
+
+/* ========================= */
+/* RESPONSIVE HERO ALIGNMENT */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .hero-body {
+    justify-content: center; /* center everything horizontally */
+    align-items: center; /* center vertically */
+    gap: 6rem;
+  }
+
+  .hero-content {
+    text-align: center; /* center text */
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-video {
+    padding-right: 0; /* remove extra spacing */
+  }
+
+  .video-wrapper {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto; /* center video */
+  }
+
+  .play-circle {
+    width: 10rem;
+    height: 10rem;
+    border-width: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .hero-section {
+    padding-bottom: 8rem;
+  }
+  .hero-content {
+    text-align: center;
+  }
+
+  /* .hero-title {
+    font-size: 3.2rem;
+  } */
+
+  .hero-video {
+    padding: 0;
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  .video-wrapper {
+    width: 18rem;
+    height: 18rem;
+    margin: 0 auto;
+  }
+
+  .play-circle {
+    width: 9rem;
+    height: 9rem;
+    border-width: 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-section {
+    padding-bottom: 5rem;
+  }
+
+  .hero-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  /* .hero-title {
+    font-size: 2.6rem;
+  } */
+
+  /* .hero-subtitle {
+    font-size: 1.4rem;
+  } */
+
+  .hero-video {
+    margin: 0 auto;
+  }
+
+  .play-circle {
+    width: 7rem;
+    height: 7rem;
+    border-width: 1.3rem;
+  }
+}

@@ -1,0 +1,283 @@
+.example-trips-section {
+  background: var(--bg-green);
+}
+.text-white {
+  color: var(--white);
+}
+
+/* The Grid Container */
+.split-layout {
+  display: grid;
+  /* 1fr for left side, auto for the thin line, 1fr for right side */
+  grid-template-columns: 1fr auto 1fr;
+  width: 100%;
+  margin-top: clamp(3rem, 4vw, 5rem);
+}
+
+/* Sections */
+.section-left,
+.section-right {
+  text-align: center;
+  margin: clamp(1.8rem, 2.4vw, 3rem);
+}
+.section-right p,
+.section-left p {
+  color: var(--white);
+  font-family: var(--extra-font);
+  font-size: clamp(1.6rem, 2vw, 2.4rem);
+  line-height: 3.4rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.price-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: clamp(3.6rem, 4vw, 5.2rem);
+  font-weight: 600;
+  line-height: 3.8rem;
+  letter-spacing: 0;
+}
+.price-unit {
+  font-weight: 600;
+  font-size: clamp(1.8rem, 2.1vw, 2.4rem);
+  letter-spacing: 0;
+}
+.section-left-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.5vw, 3rem);
+  margin-bottom: clamp(2rem, 3vw, 4rem);
+}
+
+.section-right-phone {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--extra-font);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 2.8vw, 3.2rem);
+  line-height: 3.8rem;
+  letter-spacing: 0;
+  display: inline-block;
+  width: 100%;
+  margin-top: clamp(2rem, 3vw, 4rem);
+  margin-bottom: clamp(2rem, 2.5vw, 3rem);
+}
+.section-font-small {
+  display: inline-block;
+  color: var(--white);
+  font-family: var(--extra-font);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.9vw, 2.1rem);
+  line-height: 3.4rem;
+  letter-spacing: 0%;
+}
+
+/* The Vertical Line Container */
+.divider {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  background-color: #d9d9d9; /* Light gray line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The "or" Circle */
+.or-circle {
+  position: absolute;
+  background-color: var(--bg-green); /* Dark forest green */
+  color: white;
+  width: clamp(3rem, 4.5vw, 6rem);
+  height: clamp(3rem, 4.5vw, 6rem);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--title-font);
+  font-weight: 600;
+  line-height: 1;
+  font-size: clamp(1.8rem, 2vw, 2.1rem);
+  z-index: 1;
+}
+
+/* The Enquire Button */
+.btn-enquire {
+  background-color: var(--bg-green); /* Dark forest green */
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 1.8rem 5rem;
+  font-family: var(--title-font);
+  font-size: clamp(1.8rem, 2vw, 2.1rem);
+  font-weight: 600;
+  border-radius: 5rem; /* Pill shape */
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-enquire:hover {
+  opacity: 0.9;
+}
+.overview-section {
+  background: var(--bg-gray);
+  padding-top: clamp(4rem, 6vw, 8rem);
+  padding-bottom: clamp(3rem, 4.5vw, 6rem);
+}
+
+.overview-section-container {
+  max-width: 84rem;
+  margin: auto;
+}
+.overview-heading {
+  margin: 2rem 0;
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+}
+.remove-margin {
+  margin: 0;
+}
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.overview-content p {
+  font-family: var(--extra-font);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.7vw, 1.8rem);
+  line-height: 2.8rem;
+  letter-spacing: 0%;
+}
+
+.highlight-content-section {
+  padding-top: clamp(3rem, 4.5vw, 6rem);
+  padding-bottom: var(--gap-top-bottom);
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.highlight-card ul {
+  list-style-position: inside;
+  padding-top: 1.5rem;
+}
+.highlight-card ul li {
+  font-family: var(--extra-font);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.7vw, 1.8rem);
+  line-height: 3.4rem;
+  letter-spacing: 0%;
+}
+
+.highlight-timeline {
+  margin-top: clamp(4rem, 6vw, 8rem);
+}
+.timelines-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 3.5vw, 4rem);
+  margin-top: clamp(1.5rem, 1.8vw, 2rem);
+}
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: clamp(1.5rem, 2.8vw, 4rem);
+}
+.timeline-intro {
+  display: flex;
+  gap: clamp(1rem, 1.5vw, 2rem);
+}
+.intro-icon img {
+  height: clamp(4rem, 4.5vw, 5rem);
+  width: clamp(4rem, 4.5vw, 5rem);
+  margin: 1rem 0;
+}
+.rotate-90 {
+  transform: rotate(-90deg);
+}
+.intro-tag {
+  font-family: var(--extra-font);
+  color: var(--primary-green);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 1.7vw, 1.8rem);
+  line-height: clamp(2rem, 3vw, 3.4rem);
+  letter-spacing: 0%;
+  vertical-align: middle;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+.intro-header {
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: clamp(2rem, 2.2vw, 2.4rem);
+
+  line-height: clamp(2.6rem, 3vw, 3.4rem);
+  letter-spacing: 0%;
+}
+.timeline-desc p {
+  font-family: var(--extra-font);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.7vw, 1.8rem);
+  line-height: clamp(2.4rem, 3vw, 3.4rem);
+  letter-spacing: 0%;
+}
+.overview-banner-section {
+  padding-bottom: clamp(4rem, 5vw, 6rem);
+  padding-top: 35rem;
+}
+.overview-section-tag {
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--white);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+.overview-section-heading {
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--white);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+  margin: 1.5rem 0;
+}
+.overview-section-desc {
+  font-family: var(--extra-font);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  letter-spacing: 0%;
+  color: var(--white);
+}
+@media (max-width: 1028px) {
+  .timeline-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto 1fr;
+  }
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+  }
+}

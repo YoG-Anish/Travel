@@ -1,0 +1,204 @@
+.plan-section-head {
+  background: var(--bg-gray);
+  padding-top: var(--gap-top-bottom);
+  padding-bottom: clamp(2rem, 2.7vw, 4rem);
+}
+
+.overlapping-bg {
+  background: linear-gradient(to bottom, var(--bg-gray) 50%, var(--white) 50%);
+}
+
+.overlapping-bg img {
+  width: 100%;
+  height: auto;
+}
+
+/* General Styling */
+.plan-form-wrapper {
+  margin-top: 6rem;
+}
+
+.plan-form {
+  font-family: var(--extra-font);
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 2.8rem;
+
+  color: var(--text-dark);
+  text-align: left;
+}
+
+/* Input & Select Fields */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 1.1rem 2rem;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  font-weight: 400;
+  border: 1px solid #e1e1e1;
+  color: var(--text-dark);
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+  appearance: none; /* Removes default arrows to allow custom ones */
+  -webkit-appearance: none;
+  background: var(--bg-gray);
+}
+
+/* Add custom icons for dates and selects */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: var(--primary-green);
+  cursor: pointer;
+  filter: invert(56%) sepia(21%) saturate(1001%) hue-rotate(42deg)
+    brightness(93%) contrast(86%);
+}
+
+.field {
+  position: relative;
+}
+
+/* Row Layouts */
+.row {
+  display: flex;
+  gap: 2rem;
+}
+
+.row input,
+.row .field {
+  flex: 1;
+}
+
+/* "Add Destination" Link */
+.add-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary-green);
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  font-weight: 500;
+}
+
+.add-link:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.primary-btn {
+  border-radius: 0;
+  width: 100%;
+  background-color: var(--primary-green);
+  font-family: var(--extra-font);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--hover-green);
+}
+
+/* Plan */
+
+.plan-ideas {
+  background: var(--bg-gray);
+}
+
+.hover-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-green);
+
+  color: white;
+  padding: 3rem;
+  box-sizing: border-box;
+  z-index: 3;
+
+  /* Start hidden below the card */
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hover-details p {
+  font-family: var(--extra-font);
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  font-weight: 500;
+}
+.plan-card:hover .hover-details {
+  transform: translateY(0);
+}
+
+.plan-card:hover .place-card-content {
+  top: 1rem;
+}
+.section-width-plan {
+  max-width: 78rem;
+  margin: 2rem auto;
+}
+/* Responsive adjustments */
+
+@media (max-width: 1024px) {
+  .plan-form-wrapper {
+    margin-top: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .plan-form-wrapper {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.plan-header {
+  position: relative; /* Acts as the anchor for the image */
+  z-index: 1; /* Creates a layering context */
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.header-bg-swash {
+  position: absolute;
+  top: 0; /* Adjust to move up/down */
+  left: -2rem; /* Adjust to move left/right */
+  width: clamp(15rem, 16.5vw, 18rem);
+  height: 18rem;
+  height: auto;
+  z-index: -1; /* This pushes it BEHIND the text */
+  opacity: 1; /* Optional: makes it look more like a background element */
+  pointer-events: none; /* Prevents the image from being clickable/selecting text */
+}
+
+@media (max-width: 480px) {
+  .header-bg-swash {
+    left: -6rem;
+  }
+}

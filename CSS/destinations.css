@@ -1,0 +1,73 @@
+.destination-section,
+.antient-section {
+  background: var(--bg-gray);
+}
+
+.antient-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.antient-images {
+  position: relative;
+  width: 100%;
+}
+
+/* The Reef (Background) */
+.reef-img {
+  position: relative; /* Changed from absolute */
+  display: block;
+  width: 70%; /* Leaves room for the tiger to hang off the left */
+  margin-left: auto; /* Aligns the reef to the right edge */
+  height: auto;
+  z-index: 1;
+  aspect-ratio: 37 / 58;
+}
+
+/* The Tiger (Foreground/Tilted) */
+.tiger-img {
+  position: absolute;
+  width: 55%; /* Relative to the .book-us-images container */
+  height: auto;
+
+  /* Positioning logic */
+  left: 0; /* Starts at the left edge of the container */
+  top: 20%; /* Distance from the top */
+
+  transform: rotate(-5deg);
+  z-index: 2;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+
+  aspect-ratio: 30 / 44;
+}
+
+/* Optional: Hover effect to make it interactive */
+/* .tiger-img:hover {
+  transform: rotate(0deg) scale(1.05);
+  transition: 0.3s ease-in-out;
+} */
+
+@media (max-width: 768px) {
+  .antient-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .antient-images {
+    max-width: 500px; /* Prevents images from getting too huge on tablets */
+    margin: 2rem auto 0; /* Centers the image block and adds top spacing */
+    padding-bottom: 20px; /* Space for the rotated edge */
+  }
+
+  .reef-img {
+    width: 70%; /* Slightly smaller to ensure tiger has room on screen edges */
+  }
+
+  .tiger-img {
+    width: 55%;
+    left: 5%; /* Adjusted for centered layout */
+  }
+}
