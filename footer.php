@@ -1,14 +1,12 @@
 <footer class="site-footer">
     <div class="footer-top border-bottom">
         <div class="container">
-            <ul class="footer-nav">
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="./about.html">ABOUT</a></li>
-                <li><a href="./things-to-do.html">THINGS TO DO</a></li>
-                <li><a href="./places-to-go.html">PLACES TO GO</a></li>
-                <li><a href="./plan-your-trip.html">PLAN YOUR TRIP</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'footer',
+                'menu_class' => 'footer-nav',
+            ));
+            ?>
         </div>
     </div>
     <div class="footer-main">
@@ -16,11 +14,15 @@
             <div class="footer-column">
                 <h4 class="footer-heading">DESTINATION</h4>
                 <ul class="footer-links">
-                    <li><a href="about:blank" target="_blank">Africa</a></li>
-                    <li><a href="about:blank" target="_blank">Asia</a></li>
-                    <li><a href="about:blank" target="_blank">Australasia</a></li>
-                    <li><a href="about:blank" target="_blank">Europe</a></li>
-                    <li><a href="about:blank" target="_blank">Latin America</a></li>
+                    <?php
+                    $destinations = get_terms(array(
+                        'taxonomy' => 'destination',
+                        'hide_empty' => true,
+                    ));
+                    foreach ($destinations as $destination) {
+                        echo '<li><a href="' . get_term_link($destination) . '" target="_blank">' . $destination->name . '</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="footer-column">

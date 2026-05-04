@@ -11,49 +11,50 @@
 <body <?php body_class(); ?>>
     <header id="home" class="hero-section">
         <?php
-        // 1. Fetch the Video ID from Customizer
         $video_id = get_theme_mod('travel_header_video');
         $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
 
-        // 2. Check if video exists, otherwise show the static image
         if ($video_url) : ?>
-            <video autoplay muted loop playsinline class="hero-bg">
+            <video id="mainHeroVideo" muted loop playsinline class="hero-bg">
                 <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
             </video>
         <?php else : ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/banner.svg" alt="background" class="hero-bg" />
+            <img src="<?php echo get_theme_mod('travel_header_image'); ?>" alt="background" class="hero-bg" />
         <?php endif; ?>
 
-        
-        
         <div class="container hero-container">
             <div class="logo-wrapper">
-                <a href="./index.html">
-                    <img src="./images/logo.svg" alt="travel" class="nav-logo" />
-                </a>
+                <?php
+                $header_logo_id = get_theme_mod('travel_header_logo');
+                if ($header_logo_id) :
+                    $header_logo_url = wp_get_attachment_url($header_logo_id);
+                    $header_logo_alt = get_post_meta($header_logo_id, '_wp_attachment_image_alt', true);
+                ?>
+                    <a href=<?php echo esc_url(home_url('/')); ?>>
+                        <img src="<?php echo esc_url($header_logo_url); ?>" alt="<?php echo esc_attr($header_logo_alt); ?>" class="header-logo" />
+                    <?php endif; ?>
+                    </a>
             </div>
             <div class="hero-body">
                 <div class="hero-content">
                     <span class="hero-subtitle">
-                        CONNECTING YOUR JOURNEY WITH PURPOSE
+                        <?php echo esc_html(get_theme_mod('travel_header_tagline')); ?>
                     </span>
                     <h1 class="hero-title">
-                        <span class="highlight">Unforgettable</span> Travel <br />
-                        Experiences With A <br />
-                        Positive Impact
+                        <?php echo get_theme_mod('travel_header_heading'); ?>
                     </h1>
                     <div class="hero-cta">
-                        <button class="btn-tilted btn-primary">Discover More</button>
+                        <a href="<?php echo esc_url(get_theme_mod('travel_header_button_url')); ?>" class="btn btn-primary">
+                            <?php echo esc_html(get_theme_mod('travel_header_button_text')); ?>
+                        </a>
                     </div>
                 </div>
-                
-                
-                <!-- The Play Button UI Section -->
                 <div class="hero-video">
                     <div class="video-wrapper">
                         <div class="dots-circle"></div>
-                        <button class="play-circle" aria-label="Play Video">
-                            <i class="fa-solid fa-play"></i>
+                        <button id="videoToggleButton" class="play-circle" aria-label="Toggle Video">
+                            <!-- We add an ID to the icon specifically -->
+                            <i id="toggleIcon" class="fa-solid fa-play"></i>
                         </button>
                     </div>
                 </div>
@@ -65,9 +66,9 @@
         <div class="overflow-contain">
             <div class="container nav-container">
                 <div class="nav-brand">
-                    <a href="./index.html">
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
                         <img
-                            src="./images/logo_green.svg"
+                            src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('travel_navbar_logo'))); ?>"
                             alt="travel"
                             class="nav-logo" />
                     </a>
@@ -83,17 +84,17 @@
 
                 <div class="nav-icons">
                     <div class="icon menu-icon" id="hamburger" aria-label="Menu">
-                        <img src="./images/Menu.svg" alt="menu" />
+                        <img src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('travel_navbar_hamburger_icon'))); ?>" alt="menu" />
                     </div>
 
                     <a class="icon search-icon" href="#">
-                        <img src="./images/Search.svg" />
+                        <img src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('travel_navbar_search_icon'))); ?>" />
                     </a>
                     <a class="icon heart-icon" href="#">
-                        <img src="./images/Heart.svg" />
+                        <img src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('travel_navbar_heart_icon'))); ?>" />
                     </a>
                     <a class="icon account-icon" href="#">
-                        <img src="./images/User.svg" />
+                        <img src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('travel_navbar_account_icon'))); ?>" />
                     </a>
                 </div>
             </div>

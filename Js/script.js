@@ -105,3 +105,28 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   }).mount();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('mainHeroVideo');
+    const toggleBtn = document.getElementById('videoToggleButton');
+    const icon = document.getElementById('toggleIcon');
+
+    if (toggleBtn && video) {
+        toggleBtn.addEventListener('click', function() {
+            // THE LOGIC: Check the 'paused' property of the video element
+            if (video.paused) {
+                // 1. Action: Play the video
+                video.play();
+                // 2. UI Update: Change icon to Pause
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+            } else {
+                // 1. Action: Pause the video
+                video.pause();
+                // 2. UI Update: Change icon to Play
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+            }
+        });
+    }
+});
