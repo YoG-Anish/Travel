@@ -13,17 +13,7 @@
         <div class="container footer-grid">
             <div class="footer-column">
                 <h4 class="footer-heading">DESTINATION</h4>
-                <ul class="footer-links">
-                    <?php
-                    $destinations = get_terms(array(
-                        'taxonomy' => 'destination',
-                        'hide_empty' => true,
-                    ));
-                    foreach ($destinations as $destination) {
-                        echo '<li><a href="' . get_term_link($destination) . '" target="_blank">' . $destination->name . '</a></li>';
-                    }
-                    ?>
-                </ul>
+                
             </div>
             <div class="footer-column">
                 <h4 class="footer-heading">CALL US</h4>

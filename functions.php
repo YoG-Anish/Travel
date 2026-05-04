@@ -223,3 +223,128 @@ function travel_customize_register($wp_customize)
     )));
 }
 add_action('customize_register', 'travel_customize_register');
+
+// Register custom post types for all
+function travel_register_custom_post_types()
+{
+    // Travel Places Custom Post Type
+    $labels = array(
+        'name' => 'Travel Places',
+        'singular_name' => 'Travel Place',
+        'add_new' => 'Add New Travel Place',
+        'add_new_item' => 'Add New Travel Place',
+        'edit_item' => 'Edit Travel Place',
+        'new_item' => 'New Travel Place',
+        'view_item' => 'View Travel Place',
+        'search_items' => 'Search Travel Places',
+        'not_found' => 'No travel places found',
+        'not_found_in_trash' => 'No travel places found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-location-alt',
+    );
+    register_post_type('travel_place', $args);
+
+    // Travel Stories Custom Post Type
+    $labels = array(
+        'name' => 'Travel Stories',
+        'singular_name' => 'Travel Story',
+        'add_new' => 'Add New Travel Story',
+        'add_new_item' => 'Add New Travel Story',
+        'edit_item' => 'Edit Travel Story',
+        'new_item' => 'New Travel Story',
+        'view_item' => 'View Travel Story',
+        'search_items' => 'Search Travel Stories',
+        'not_found' => 'No travel stories found',
+        'not_found_in_trash' => 'No travel stories found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-format-aside',
+    );
+    register_post_type('travel_story', $args);
+
+    // Travel Testimonials Custom Post Type
+    $labels = array(
+        'name' => 'Travel Testimonials',
+        'singular_name' => 'Travel Testimonial',
+        'add_new' => 'Add New Travel Testimonial',
+        'add_new_item' => 'Add New Travel Testimonial',
+        'edit_item' => 'Edit Travel Testimonial',
+        'new_item' => 'New Travel Testimonial',
+        'view_item' => 'View Travel Testimonial',
+        'search_items' => 'Search Travel Testimonials',
+        'not_found' => 'No travel testimonials found',
+        'not_found_in_trash' => 'No travel testimonials found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-testimonial',
+    );
+    register_post_type('travel_testimonial', $args);
+
+    // Travel Sliders Custom Post Type
+    $labels = array(
+        'name' => 'Travel Sliders',
+        'singular_name' => 'Travel Slider',
+        'add_new' => 'Add New Travel Slider',
+        'add_new_item' => 'Add New Travel Slider',
+        'edit_item' => 'Edit Travel Slider',
+        'new_item' => 'New Travel Slider',
+        'view_item' => 'View Travel Slider',
+        'search_items' => 'Search Travel Sliders',
+        'not_found' => 'No travel sliders found',
+        'not_found_in_trash' => 'No travel sliders found in Trash',
+    );
+    
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-images-alt2',
+    );
+    register_post_type('travel_slider', $args);
+
+    // Travel Styles Custom Post Type
+    $labels = array(
+        'name' => 'Travel Styles',
+        'singular_name' => 'Travel Style',
+        'add_new' => 'Add New Travel Style',    
+        'add_new_item' => 'Add New Travel Style',
+        'edit_item' => 'Edit Travel Style',
+        'new_item' => 'New Travel Style',
+        'view_item' => 'View Travel Style',
+        'search_items' => 'Search Travel Styles',
+        'not_found' => 'No travel styles found',
+        'not_found_in_trash' => 'No travel styles found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-palmtree',
+    );
+    register_post_type('travel_style', $args);
+}
+add_action('init', 'travel_register_custom_post_types');

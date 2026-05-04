@@ -90,77 +90,33 @@ get_header();
                 </p>
             </div>
             <div class="places-grid">
-                <div class="place-card">
-                    <a href="#">
-                        <img src="./images/piran.png" alt="Piran And Salt Pans" />
-                    </a>
-                    <div class="place-card-content">
-                        <h3 class="place-title">Piran And Salt Pans</h3>
-                        <p class="place-text">
-                            Piran, the most beautiful town of Mediterranean Slovenia.
-                        </p>
-                    </div>
-                </div>
-                <div class="place-card">
-                    <a href="#">
-                        <img src="./images/postojna.png" alt="Postojna Cave" />
-                    </a>
-
-                    <div class="place-card-content">
-                        <h3 class="place-title">Postojna Cave</h3>
-                        <p class="place-text">
-                            Postojna Cave and Predjama Castle are world-class attractions!
-                        </p>
-                    </div>
-                </div>
-                <div class="place-card">
-                    <a href="#">
-                        <img src="./images/bled.png" alt="Bled" />
-                    </a>
-
-                    <div class="place-card-content">
-                        <h3 class="place-title">Bled</h3>
-                        <p class="place-text">
-                            Lake Bled and a castle perched on a cliff is one of the most
-                            beautiful Alpine resorts in Europe.
-                        </p>
-                    </div>
-                </div>
-                <div class="place-card">
-                    <a href="#">
-                        <img src="./images/postojna.png" alt="Postojna Cave" />
-                    </a>
-
-                    <div class="place-card-content">
-                        <h3 class="place-title">Postojna Cave</h3>
-                        <p class="place-text">
-                            Postojna Cave and Predjama Castle are world-class attractions!
-                        </p>
-                    </div>
-                </div>
-                <div class="place-card">
-                    <a href="#">
-                        <img src="./images/bled.png" alt="Bled" />
-                    </a>
-                    <div class="place-card-content">
-                        <h3 class="place-title">Bled</h3>
-                        <p class="place-text">
-                            Lake Bled and a castle perched on a cliff is one of the most
-                            beautiful Alpine resorts in Europe.
-                        </p>
-                    </div>
-                </div>
-                <div class="place-card">
-                    <a href="#">
-                        <img src="./images/piran.png" alt="Piran And Salt Pans" />
-                    </a>
-                    <div class="place-card-content">
-                        <h3 class="place-title">Piran And Salt Pans</h3>
-                        <p class="place-text">
-                            Piran, the most beautiful town of Mediterranean Slovenia.
-                        </p>
-                    </div>
-                </div>
+                <?php
+                $travel_places = new WP_Query(array(
+                    'post_type' => 'travel_place',
+                    'posts_per_page' => 6,
+                ));
+                if ($travel_places->have_posts()) :
+                    while ($travel_places->have_posts()) : $travel_places->the_post();
+                ?>
+                        <div class="place-card">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium_large', ['alt' => get_the_title()]); ?>
+                                </a>
+                            <?php endif; ?>
+                            <div class="place-card-content">
+                                <h3 class="place-title"><?php the_title(); ?></h3>
+                                <p class="place-text">
+                                    <?php echo wp_trim_words(get_the_content(), 20, '...'); ?>
+                                </p>
+                            </div>
+                        </div>
+                <?php endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>No places found.</p>';
+                endif;
+                ?>
             </div>
         </div>
     </section>
