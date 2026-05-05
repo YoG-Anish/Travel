@@ -9,6 +9,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <?php 
+    if (is_front_page()) { ?>
+        
     <header id="home" class="hero-section">
         <?php
         $video_id = get_theme_mod('travel_header_video');
@@ -63,6 +66,7 @@
             </div>
         </div>
     </header>
+    <?php } ?>
 
     <nav class="main-navigation">
         <div class="overflow-contain">

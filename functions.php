@@ -9,6 +9,7 @@ function travel_enqueue_scripts()
     wp_enqueue_style('travel-button', get_template_directory_uri() . '/CSS/button.css');
     wp_enqueue_style('travel-nav', get_template_directory_uri() . '/CSS/nav.css');
     wp_enqueue_style('travel-main', get_template_directory_uri() . '/CSS/main.css');
+    wp_enqueue_style('travel-about', get_template_directory_uri() . '/CSS/about.css');
     wp_enqueue_style('travel-features', get_template_directory_uri() . '/CSS/features.css');
     wp_enqueue_style('travel-places', get_template_directory_uri() . '/CSS/places.css');
     wp_enqueue_style('travel-slider', get_template_directory_uri() . '/CSS/slider.css');
@@ -39,6 +40,8 @@ function travel_theme_setup()
         'primary' => __('Primary Menu', 'travel'),
         'footer' => __('Footer Menu', 'travel'),
         'sidemenu' => __('Side Menu', 'travel'),
+        'footer-bottom' => __('Footer Bottom Menu', 'travel'),
+
     ));
 }
 add_action('after_setup_theme', 'travel_theme_setup');
@@ -390,6 +393,109 @@ function travel_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    // Footer Menu
+    $wp_customize->add_section('travel_footer_menu_section', array(
+        'title' => __('Footer Menu Settings', 'travel'),
+        'priority' => 33,
+    ));
+
+    // footer copyright text
+    $wp_customize->add_setting('footer_copyright_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('footer_copyright_text_control', array(
+        'label' => __('Footer Copyright Text', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_copyright_text',
+        'type' => 'text',
+    ));
+
+    // footer social media icons
+    // footer facebook icon
+    $wp_customize->add_setting('footer_facebook_icon', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'footer_facebook_icon_control', array(
+        'label' => __('Footer Facebook Icon', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_facebook_icon',
+        'mime_type' => 'image',
+    )));
+
+    // facebook URL
+    $wp_customize->add_setting('footer_facebook_url', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('footer_facebook_url_control', array(
+        'label' => __('Footer Facebook URL', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_facebook_url',
+        'type' => 'text',
+    )); 
+
+    // footer instagram icon
+    $wp_customize->add_setting('footer_instagram_icon', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'footer_instagram_icon_control', array(
+        'label' => __('Footer Instagram Icon', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_instagram_icon',
+        'mime_type' => 'image',
+    )));
+
+    // instagram URL
+    $wp_customize->add_setting('footer_instagram_url', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('footer_instagram_url_control', array(
+        'label' => __('Footer Instagram URL', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_instagram_url',
+        'type' => 'text',
+    )); 
+
+    //  footer linkedin icon
+    $wp_customize->add_setting('footer_linkedin_icon', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'footer_linkedin_icon_control', array(
+        'label' => __('Footer LinkedIn Icon', 'travel'),
+        'section' => 'travel_footer_menu_section',  
+        'settings' => 'footer_linkedin_icon',
+        'mime_type' => 'image',
+    )));    
+
+    // linkedin URL
+    $wp_customize->add_setting('footer_linkedin_url', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('footer_linkedin_url_control', array(
+        'label' => __('Footer LinkedIn URL', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_linkedin_url',
+        'type' => 'text',
+    ));
+
+    // footer logo
+    $wp_customize->add_setting('footer_logo', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'footer_logo_control', array(
+        'label' => __('Footer Logo', 'travel'),
+        'section' => 'travel_footer_menu_section',
+        'settings' => 'footer_logo',
+        'mime_type' => 'image',
+    )));
+
 }
 add_action('customize_register', 'travel_customize_register');
 
@@ -515,5 +621,31 @@ function travel_register_custom_post_types()
         'menu_icon' => 'dashicons-palmtree',
     );
     register_post_type('travel_style', $args);
+
+    // register Destination taxonomy for travel places that has choose option in post  
+    $labels = array(
+        'name' => 'Destinations',
+        'singular_name' => 'Destination',
+        'search_items' => 'Search Destinations',
+        'all_items' => 'All Destinations',
+        'parent_item' => 'Parent Destination',
+        'parent_item_colon' => 'Parent Destination:',
+        'edit_item' => 'Edit Destination',
+        'update_item' => 'Update Destination',
+        'add_new_item' => 'Add New Destination',
+        'new_item_name' => 'New Destination Name',
+        'menu_name' => 'Destinations',
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'destination'),
+        'show_in_rest' => true,
+    );
+    register_taxonomy('destination', array('travel_place'), $args);
 }
 add_action('init', 'travel_register_custom_post_types');

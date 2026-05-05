@@ -67,3 +67,54 @@
 .wpcf7-form-control-wrap { display: block; }
 span.wpcf7-not-valid-tip { position: absolute; font-size: 11px; bottom: -18px; }
 /* end of form styles */
+
+
+/* 1. The Container: Needs height and relative positioning */
+.about-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Or whatever height matches your design */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. The Background (Video or Image): Needs to be forced to the background */
+.about-video-wrapper .hero-bg {
+    position: absolute; /* Pulls it out of the layout flow */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures it fills the box without stretching */
+    z-index: 1;         /* Low layer */
+}
+
+/* 3. The Content (Overlay): Needs to sit on top */
+.about-video-wrapper .video-overlay {
+    position: relative; /* Allows it to respect z-index */
+    z-index: 2;         /* High layer (2 is above 1) */
+    text-align: center;
+}
+
+/* 4. Play Button Styling (Based on your image) */
+.play-circle {
+    width: 80px;
+    height: 80px;
+    background: #7DA438; /* Olive Green */
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.play-circle:hover {
+    transform: scale(1.1);
+}

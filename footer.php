@@ -12,51 +12,75 @@
     <div class="footer-main">
         <div class="container footer-grid">
             <div class="footer-column">
-                <h4 class="footer-heading">DESTINATION</h4>
-                
+                <?php
+                // Destination taxonomy query loop
+                $destinations = get_terms(array(
+                    'taxonomy' => 'destination',
+                    'hide_empty' => false,
+                ));
+                if (!empty($destinations) && !is_wp_error($destinations)) {
+                    echo '<h4 class="footer-heading">DESTINATION</h4>';
+                    echo '<ul class="footer-links">';
+                    foreach ($destinations as $destination) {
+                        echo '<li><a href="' . esc_url(get_term_link($destination)) . '" target="_blank">' . esc_html($destination->name) . '</a></li>';
+                    }
+                    echo '</ul>';
+                }
+                ?>
             </div>
             <div class="footer-column">
-                <h4 class="footer-heading">CALL US</h4>
+                <h4 class="footer-heading"><?php echo get_theme_mod('contactform_section2_call_text'); ?></h4>
                 <p class="contacts">
-                    <a href="tel:+1833123456">+1 (833) 123 456</a>
+                    <a href="tel:+1833123456"><?php echo get_theme_mod('contactform_section2_phone_number'); ?></a>
                 </p>
 
-                <h4 class="footer-heading">EMAIL US</h4>
+                <h4 class="footer-heading"><?php echo get_theme_mod('contactform_section2_email_text'); ?></h4>
                 <p class="contacts">
-                    <a href="mailto:explore@travel.com">explore@travel.com</a>
+                    <a href="mailto:<?php echo get_theme_mod('contactform_section2_email'); ?>"><?php echo get_theme_mod('contactform_section2_email'); ?></a>
                 </p>
             </div>
             <div class="footer-column">
                 <div class="footer-reviews">
                     <span class="stars">
                         <div class="overall-stars mid-stars">
-                            <img src="./images/Star.svg" alt="*" />
-                            <img src="./images/Star.svg" alt="*" />
-                            <img src="./images/Star.svg" alt="*" />
-                            <img src="./images/Star.svg" alt="*" />
-                            <img src="./images/Star.svg" alt="*" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/Star.svg" alt="*" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/Star.svg" alt="*" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/Star.svg" alt="*" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/Star.svg" alt="*" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/Star.svg" alt="*" />
                         </div>
                     </span>
-                    <p>Based on <span class="highlight">56 reviews</span></p>
+                    <p> <?php echo get_theme_mod('rating_text'); ?> </p>
                     <a href="#" class="btn-white">Review Us On
-                        <span class="tiny-star"><img src="./images/Star.svg" alt="*" /></span>
+                        <span class="tiny-star"><img src="<?php echo get_template_directory_uri(); ?>/images/Star.svg" alt="*" /></span>
                         Trustpilot</a>
                 </div>
                 <div class="social-links">
+                    <?php
+                    $facebook_icon_id = get_theme_mod('footer_facebook_icon');
+                    $instagram_icon_id = get_theme_mod('footer_instagram_icon');
+                    $linkedin_icon_id = get_theme_mod('footer_linkedin_icon');
+                    ?>
                     <span class="social-icon">
-                        <a href="about:blank" target="_blank">
-                            <img src="./images/Facebook F.svg" alt="Facebook" />
-                        </a>
+                        <?php if ($facebook_icon_id) { ?>
+                            <a href="<?php echo get_theme_mod('footer_facebook_url'); ?>" target="_blank">
+                                <img src="<?php echo wp_get_attachment_url($facebook_icon_id, 'full'); ?>" alt="Facebook" />
+                            </a>
+                        <?php } ?>
                     </span>
                     <span class="social-icon">
-                        <a href="about:blank" target="_blank">
-                            <img src="./images/Instagram.svg" alt="Instagram" />
-                        </a>
+                        <?php if ($instagram_icon_id) { ?>
+                            <a href="<?php echo get_theme_mod('footer_instagram_url'); ?>" target="_blank">
+                                <img src="<?php echo wp_get_attachment_url($instagram_icon_id, 'full'); ?>" alt="Instagram" />
+                            </a>
+                        <?php } ?>
                     </span>
                     <span class="social-icon">
-                        <a href="about:blank" target="_blank">
-                            <img src="./images/LinkedIn.svg" alt="LinkedIn" />
-                        </a>
+                        <?php if ($linkedin_icon_id) { ?>
+                            <a href="<?php echo get_theme_mod('footer_linkedin_url'); ?>" target="_blank">
+                                <img src="<?php echo wp_get_attachment_url($linkedin_icon_id, 'full'); ?>" alt="LinkedIn" />
+                            </a>
+                        <?php } ?>
                     </span>
                 </div>
             </div>
@@ -64,15 +88,23 @@
     </div>
     <div class="footer-bottom">
         <div class="container footer-bottom-design">
-            <p>© 2024 Tourist Board. All rights reserved.</p>
-            <a href="./index.html">
-                <img src="./images/logo.svg" alt="travel" class="logo-img" />
-            </a>
-            <ul class="terms-and-policies">
-                <li><a href="about:blank" target="_blank">Terms</a></li>
-                <li><a href="about:blank" target="_blank">Cookie Policy</a></li>
-                <li><a href="about:blank" target="_blank">Privacy Policy</a></li>
-            </ul>
+            <p><?php echo get_theme_mod('footer_copyright_text'); ?></p>
+            <?php
+            $footer_logo_id = get_theme_mod('footer_logo');
+            
+            if ($footer_logo_id) { ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <img
+                        src="<?php echo wp_get_attachment_url($footer_logo_id, 'full'); ?>"
+                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                        class="logo-img" />
+                </a>
+            <?php }
+            wp_nav_menu(array(
+                'theme_location' => 'footer-bottom',
+                'menu_class' => 'terms-and-policies',
+            ));
+            ?>
         </div>
     </div>
 </footer>
