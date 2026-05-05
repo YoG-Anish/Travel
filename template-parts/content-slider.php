@@ -5,15 +5,15 @@
             <button class="splide__arrow splide__arrow--next"></button>
         </div>
         <div class="splide__track">
-            <?php
-            $slider_args = array(
-                'post_type' => 'travel_slider',
-                'posts_per_page' => -1,
+            <ul class="splide__list">
+                <?php
+                $slider_args = array(
+                    'post_type' => 'travel_slider',
+                    'posts_per_page' => -1,
                 );
                 $slider_query = new WP_Query($slider_args);
-                if ($slider_query->have_posts()) :?>
-                    <ul class="splide__list">
-                   <?php while ($slider_query->have_posts()) : $slider_query->the_post(); ?>
+                if ($slider_query->have_posts()) : ?>
+                    <?php while ($slider_query->have_posts()) : $slider_query->the_post(); ?>
                         <li class="splide__slide">
                             <div class="banner-slide">
                                 <!-- Full-height banner image -->
@@ -58,11 +58,11 @@
                             </div>
                         </li>
                     <?php endwhile;
-                wp_reset_postdata();
-            else : ?>
+                    wp_reset_postdata();
+                else : ?>
                     <p>No slides found.</p>
                 <?php endif; ?>
-                    </ul>
+            </ul>
         </div>
     </div>
 </section>

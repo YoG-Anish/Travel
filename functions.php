@@ -136,7 +136,7 @@ function travel_customize_register($wp_customize)
         'section' => 'travel_header_section',
         'settings' => 'travel_header_heading',
         'type' => 'text',
-    )); 
+    ));
 
     // header Discover More Button text
     $wp_customize->add_setting('travel_header_button_text', array(
@@ -145,10 +145,10 @@ function travel_customize_register($wp_customize)
     ));
     $wp_customize->add_control('travel_header_button_text_control', array(
         'label' => __('Header Button Text', 'travel'),
-        'section' => 'travel_header_section', 
+        'section' => 'travel_header_section',
         'settings' => 'travel_header_button_text',
         'type' => 'text',
-    )); 
+    ));
 
     // header Discover More Button URL
     $wp_customize->add_setting('travel_header_button_url', array(
@@ -158,10 +158,10 @@ function travel_customize_register($wp_customize)
     $wp_customize->add_control('travel_header_button_url_control', array(
         'label' => __('Header Button URL', 'travel'),
         'section' => 'travel_header_section',
-        'settings' => 'travel_header_button_url',   
+        'settings' => 'travel_header_button_url',
         'type' => 'dropdown-pages',
     ));
-   
+
     // Navbar Logo  
     $wp_customize->add_setting('travel_navbar_logo', array(
         'default' => '',
@@ -221,6 +221,49 @@ function travel_customize_register($wp_customize)
         'settings' => 'travel_navbar_account_icon',
         'mime_type' => 'image',
     )));
+
+    // testinomial dynamic seperate section 
+    $wp_customize->add_section('travel_testimonial_section', array(
+        'title' => __('Testimonial Settings', 'travel'),
+        'priority' => 31,
+    ));
+
+     // testinomial title
+     $wp_customize->add_setting('testinomial_title', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('testinomial_title_control', array(
+        'label' => __('Testimonial Title', 'travel'),
+        'section' => 'travel_testimonial_section',
+        'settings' => 'testinomial_title',
+        'type' => 'text',
+    ));
+
+    //testinomial heading
+    $wp_customize->add_setting('testinomial_heading', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('testinomial_heading_control', array(
+        'label' => __('Testimonial Heading', 'travel'),
+        'section' => 'travel_testimonial_section',
+        'settings' => 'testinomial_heading',
+        'type' => 'text',
+    ));
+
+    // testinomial rating text
+    $wp_customize->add_setting('rating_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('rating_text_control', array(
+        'label' => __('Testimonial Rating Text', 'travel'),
+        'section' => 'travel_testimonial_section',
+        'settings' => 'rating_text',
+        'type' => 'text',
+    ));
+  
 }
 add_action('customize_register', 'travel_customize_register');
 
@@ -312,7 +355,7 @@ function travel_register_custom_post_types()
         'not_found' => 'No travel sliders found',
         'not_found_in_trash' => 'No travel sliders found in Trash',
     );
-    
+
     $args = array(
         'labels' => $labels,
         'public' => true,
@@ -327,7 +370,7 @@ function travel_register_custom_post_types()
     $labels = array(
         'name' => 'Travel Styles',
         'singular_name' => 'Travel Style',
-        'add_new' => 'Add New Travel Style',    
+        'add_new' => 'Add New Travel Style',
         'add_new_item' => 'Add New Travel Style',
         'edit_item' => 'Edit Travel Style',
         'new_item' => 'New Travel Style',
