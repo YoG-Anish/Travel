@@ -496,6 +496,24 @@ function travel_customize_register($wp_customize)
         'mime_type' => 'image',
     )));
 
+    // customizer for google maps section
+    $wp_customize->add_section('travel_google_maps_section', array(
+        'title' => __('Google Maps Settings', 'travel'),
+        'priority' => 34,
+    ));
+    
+    $wp_customize->add_setting('google_maps', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('google_maps_api_key_control', array(
+        'label' => __('Google Maps', 'travel'),
+        'section' => 'travel_google_maps_section',
+        'settings' => 'google_maps',
+        'type' => 'text',
+    ));
+
+    
 }
 add_action('customize_register', 'travel_customize_register');
 
@@ -649,3 +667,4 @@ function travel_register_custom_post_types()
     register_taxonomy('destination', array('travel_place'), $args);
 }
 add_action('init', 'travel_register_custom_post_types');
+

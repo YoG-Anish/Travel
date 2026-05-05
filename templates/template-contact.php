@@ -84,14 +84,18 @@ get_header();
             <div class="map-in-grid">
                 <div class="embed-map-responsive">
                     <div class="embed-map-container">
-                        <iframe
-                            class="embed-map-frame"
-                            frameborder="0"
-                            scrolling="no"
-                            marginheight="0"
-                            marginwidth="0"
-                            src="https://maps.google.com/maps?width=600&height=520&hl=en&q=bhaktapur.com&t=&z=14&ie=UTF8&iwloc=B&output=embed">
-                        </iframe>
+                        <?php
+                        $contact_map = get_theme_mod('google_maps');
+                        if ($contact_map) { ?>
+                            <iframe
+                                class="embed-map-frame"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                src="<?php echo $contact_map; ?>">
+                            </iframe>
+                        <?php } ?>
                         <a
                             href="https://sprunkiretake.net"
                             style="
