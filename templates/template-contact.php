@@ -8,78 +8,14 @@ get_header();
     <section class="contact-top-header">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Contact us</span>
-                <h2 class="section-heading">
-                    <span class="highlight">Contact us</span> by sending <br />
-                    a message
-                </h2>
-                <p class="section-desc desc-width">
-                    We always aim to reply within 24 hours.
-                </p>
+                <?php echo get_field('contact_headings'); ?>
             </div>
         </div>
     </section>
     <section class="form-map-section">
         <div class="container form-map-grid">
             <div class="contact-form-in-grid">
-                <form action="#" method="POST" class="contact-form">
-                    <div class="contact-form-group">
-                        <label for="fullname">Your Name</label>
-                        <div class="row">
-                            <input
-                                type="text"
-                                id="firstname"
-                                name="firstname"
-                                placeholder="First name"
-                                required />
-                            <input
-                                type="text"
-                                id="lastname"
-                                name="lastname"
-                                placeholder="Last Name"
-                                required />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="contact-form-group field">
-                            <label for="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Your Email"
-                                required />
-                        </div>
-
-                        <div class="contact-form-group field">
-                            <label for="phone">Phone</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="pnone"
-                                placeholder="Your Number"
-                                required />
-                        </div>
-                    </div>
-                    <!-- DESTINATION -->
-                    <div class="contact-form-group">
-                        <label for="message">Message</label>
-                        <textarea
-                            type="textarea"
-                            id="message"
-                            name="message"
-                            placeholder="Your Message"
-                            rows="3"
-                            required></textarea>
-                    </div>
-                    <!-- SUBMIT -->
-                    <div class="form-actions">
-                        <button type="submit" class="button primary-btn">
-                            SEND MESSAGE
-                        </button>
-                    </div>
-                </form>
+                <?php echo do_shortcode('[contact-form-7 id="d9294fc" title="Contact page form"]'); ?>
             </div>
             <div class="map-in-grid">
                 <div class="embed-map-responsive">

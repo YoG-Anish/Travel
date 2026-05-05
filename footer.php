@@ -111,8 +111,7 @@
 <div class="search-modal" id="searchModal">
     <div class="search-box">
         <form>
-            <input type="text" placeholder="Search your destination..." />
-            <button type="submit">Search</button>
+        <?php get_search_form(); ?>
         </form>
 
         <span class="close-search" id="closeSearch">&times;</span>
