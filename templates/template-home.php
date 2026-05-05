@@ -237,92 +237,9 @@ get_header();
     </section>
 
     <?php get_template_part('template-parts/content', 'testonomial'); ?>
-
-    <section class="newsletter-section">
-        <div class="mountain-cloud-bg">
-            <div class="container text-center">
-                <span class="section-tag"> THE WORLD IS AT YOUR FEET </span>
-                <h2 class="section-heading">
-                    Receive <span class="highlight">Inspiration</span> In Your Inbox
-                </h2>
-            </div>
-        </div>
-        <div class="cloud-bg">
-            <div class="container newsletter-form-wrapper">
-                <form action="#" class="newsletter-form">
-                    <div class="form-row name-row">
-                        <div class="input-data">
-                            <input type="text" required />
-                            <label for="">First Name</label>
-                        </div>
-                        <div class="input-data">
-                            <input type="text" required />
-                            <label for="">Last Name</label>
-                        </div>
-                    </div>
-
-                    <div class="form-row email-row">
-                        <div class="input-data">
-                            <input type="text" required />
-                            <label for="">Email Address</label>
-                        </div>
-                        <div class="input-data-check">
-                            <div class="checkbox-wrapper-15">
-                                <input
-                                    class="inp-cbx"
-                                    id="cbx-15"
-                                    type="checkbox"
-                                    style="display: none" />
-                                <label class="cbx" for="cbx-15">
-                                    <span>
-                                        <svg width="12px" height="9px" viewbox="0 0 12 9">
-                                            <polyline points="1 5 4 8 11 1"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span>I'm happy to receive emails*</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="submit-btn">
-                        <div class="input-data">
-                            <button type="submit" class="btn-tilted btn-outline-dark">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-cta-section section-padding bg-accent">
-        <div class="container contact-grid">
-            <div class="contact-text">
-                <h2 class="section-heading">
-                    <span class="highlight">Contact</span> A Travel Researcher
-                </h2>
-                <p>We always aim to reply within 24 hours.</p>
-            </div>
-            <div class="contact-options">
-                <div class="contact-option">
-                    <img src="./images/Call.svg" alt="Call" />
-                    <span class="option-label">Call Us</span>
-                    <a href="tel:+18331234567" class="option-value">
-                        +1 (833) 123-4567
-                    </a>
-                </div>
-                <div class="contact-option">
-                    <img src="./images/Email.svg" alt="Email" />
-                    <span class="option-label option-email-gap">
-                        <a href="mailto:explore@travel.com" class="option-value">
-                            Send Us An Enquiry
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php get_template_part('template-parts/content', 'contactform'); ?>
+    <?php get_template_part('template-parts/content', 'contactsection'); ?>
+    
 </main>
 
 <?php get_footer(); ?>

@@ -263,7 +263,133 @@ function travel_customize_register($wp_customize)
         'settings' => 'rating_text',
         'type' => 'text',
     ));
-  
+
+    // contact form dynamic seperate section
+    $wp_customize->add_section('travel_contact_section', array(
+        'title' => __('Contact Form Settings', 'travel'),
+        'priority' => 32,
+    )); 
+
+    // contactform tagline  
+    $wp_customize->add_setting('contactform_tagline', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_tagline_control', array(
+        'label' => __('Contact Form Tagline', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_tagline',
+        'type' => 'text',
+    ));
+
+    // contactform heading
+    $wp_customize->add_setting('contactform_heading', array(
+        'default' => '',
+        'transport' => 'refresh',   
+    ));
+    $wp_customize->add_control('contactform_heading_control', array(
+        'label' => __('Contact Form Heading', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_heading',    
+        'type' => 'text',
+    ));
+
+    // Contact section2 heading
+    $wp_customize->add_setting('contactform_section2_heading', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_section2_heading_control', array(
+        'label' => __('Contact Section 2 Heading', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_heading',
+        'type' => 'text',
+    ));
+
+    // contact section2 tagline
+    $wp_customize->add_setting('contactform_section2_tagline', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_section2_tagline_control', array(
+        'label' => __('Contact Section 2 Tagline', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_tagline',
+        'type' => 'text',
+    ));
+
+    // Contact section2 phone icon
+    $wp_customize->add_setting('contactform_section2_phone_icon', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'contactform_section2_phone_icon_control', array(
+        'label' => __('Contact Section 2 Phone Icon', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_phone_icon',
+        'mime_type' => 'image',
+    )));    
+
+    // Contact section2 Call Us text
+    $wp_customize->add_setting('contactform_section2_call_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_section2_call_text_control', array(
+        'label' => __('Contact Section 2 Call Us Text', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_call_text',
+        'type' => 'text',
+    ));
+
+    // Contact section2 phone number
+    $wp_customize->add_setting('contactform_section2_phone_number', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_section2_phone_number_control', array(
+        'label' => __('Contact Section 2 Phone Number', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_phone_number',
+        'type' => 'text',
+    ));
+
+    // Contact section2 email icon
+    $wp_customize->add_setting('contactform_section2_email_icon', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'contactform_section2_email_icon_control', array(
+        'label' => __('Contact Section 2 Email Icon', 'travel'),
+        'section' => 'travel_contact_section',  
+        'settings' => 'contactform_section2_email_icon',
+        'mime_type' => 'image',
+    )));
+
+    // Contact section2 email text
+    $wp_customize->add_setting('contactform_section2_email_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_section2_email_text_control', array(    
+        'label' => __('Contact Section 2 Email Text', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_email_text',
+        'type' => 'text',
+    ));
+
+    // Contact section2 email address
+    $wp_customize->add_setting('contactform_section2_email', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contactform_section2_email_control', array(
+        'label' => __('Contact Section 2 Email Address', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_section2_email',     
+        'type' => 'text',
+    ));
+
 }
 add_action('customize_register', 'travel_customize_register');
 
