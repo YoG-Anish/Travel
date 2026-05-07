@@ -196,3 +196,30 @@ span.wpcf7-not-valid-tip {
     font-size: 12px;
     margin-top: 5px;
 }
+
+/* 1. Force CF7 wrappers to behave like the inputs inside them */
+.plan-form .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+}
+
+/* 2. Fix the side-by-side rows */
+.plan-form .row {
+    display: flex;
+    gap: 15px; /* Adjust gap to match your design */
+}
+
+.plan-form .row > * {
+    flex: 1;
+}
+
+/* 3. Ensure inputs/selects match your static widths */
+.plan-form input, 
+.plan-form select {
+    width: 100% !important;
+}
+
+/* 4. Hide CF7's default error messages from pushing your layout */
+span.wpcf7-not-valid-tip {
+    display: none !important;
+}

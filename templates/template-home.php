@@ -101,7 +101,7 @@ get_header();
                         <div class="place-card">
                             <?php if (has_post_thumbnail()) : ?>
                                 <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('medium_large', ['alt' => get_the_title()]); ?>
+                                    <?php the_post_thumbnail(); ?>
                                 </a>
                             <?php endif; ?>
                             <div class="place-card-content">

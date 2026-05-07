@@ -11,7 +11,10 @@ function travel_enqueue_scripts()
     wp_enqueue_style('travel-main', get_template_directory_uri() . '/CSS/main.css');
     wp_enqueue_style('travel-about', get_template_directory_uri() . '/CSS/about.css');
     wp_enqueue_style('travel-features', get_template_directory_uri() . '/CSS/features.css');
+    wp_enqueue_style('travel-plans', get_template_directory_uri() . '/CSS/plans.css');
     wp_enqueue_style('travel-places', get_template_directory_uri() . '/CSS/places.css');
+    wp_enqueue_style('travel-pagination', get_template_directory_uri() . '/CSS/pagination.css');
+    wp_enqueue_style('travel-destinations', get_template_directory_uri() . '/CSS/destinations.css');
     wp_enqueue_style('travel-slider', get_template_directory_uri() . '/CSS/slider.css');
     wp_enqueue_style('travel-overflow', get_template_directory_uri() . '/CSS/overflow.css');
     wp_enqueue_style('travel-stories', get_template_directory_uri() . '/CSS/stories.css');
@@ -665,7 +668,109 @@ function travel_register_custom_post_types()
         'rewrite' => array('slug' => 'destination'),
         'show_in_rest' => true,
     );
-    register_taxonomy('destination', array('travel_place'), $args);
+    register_taxonomy('destination', array('travel_place', 'travel_slider'), $args);
+
+    // travel Itinerary cpt
+    $labels = array(
+        'name' => 'Travel Itineraries',
+        'singular_name' => 'Travel Itinerary',
+        'add_new' => 'Add New Travel Itinerary',
+        'add_new_item' => 'Add New Travel Itinerary',
+        'edit_item' => 'Edit Travel Itinerary',
+        'new_item' => 'New Travel Itinerary',
+        'view_item' => 'View Travel Itinerary',
+        'search_items' => 'Search Travel Itineraries',
+        'not_found' => 'No travel itineraries found',
+        'not_found_in_trash' => 'No travel itineraries found in Trash',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-calendar-alt',
+    );
+    register_post_type('travel_itinerary', $args);
+
+    //taxonomy for travel itinerary preference, pace and attraction style
+    $labels = array(
+        'name' => 'Preferences',
+        'singular_name' => 'Preference',
+        'search_items' => 'Search Preferences',
+        'all_items' => 'All Preferences',
+        'parent_item' => 'Parent Preference',
+        'parent_item_colon' => 'Parent Preference:',
+        'edit_item' => 'Edit Preference',
+        'update_item' => 'Update Preference',
+        'add_new_item' => 'Add New Preference',
+        'new_item_name' => 'New Preference Name',
+        'menu_name' => 'Preferences',
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'preference'),
+        'show_in_rest' => true,
+    );
+    register_taxonomy('preference', array('travel_itinerary'), $args);
+
+    // taxonomy for travel itinerary pace
+    $labels = array(
+        'name' => 'Paces',
+        'singular_name' => 'Pace',
+        'search_items' => 'Search Paces',
+        'all_items' => 'All Paces',
+        'parent_item' => 'Parent Pace',
+        'parent_item_colon' => 'Parent Pace:',
+        'edit_item' => 'Edit Pace',
+        'update_item' => 'Update Pace',
+        'add_new_item' => 'Add New Pace',
+        'new_item_name' => 'New Pace Name',
+        'menu_name' => 'Paces',
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'pace'),
+        'show_in_rest' => true,
+    );
+    register_taxonomy('pace', array('travel_itinerary'), $args);
+
+    // attraction style taxonomy
+    $labels = array(
+        'name' => 'Attraction Styles',
+        'singular_name' => 'Attraction Style',
+        'search_items' => 'Search Attraction Styles',
+        'all_items' => 'All Attraction Styles',
+        'parent_item' => 'Parent Attraction Style',
+        'parent_item_colon' => 'Parent Attraction Style:',
+        'edit_item' => 'Edit Attraction Style',
+        'update_item' => 'Update Attraction Style',
+        'add_new_item' => 'Add New Attraction Style',
+        'new_item_name' => 'New Attraction Style Name',
+        'menu_name' => 'Attraction Styles',
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'attraction-style'),
+        'show_in_rest' => true,
+    );
+    register_taxonomy('attraction-style', array('travel_itinerary'), $args);
 }
 add_action('init', 'travel_register_custom_post_types');
 
