@@ -110,9 +110,8 @@
 </footer>
 <div class="search-modal" id="searchModal">
     <div class="search-box">
-        <form>
+        
         <?php get_search_form(); ?>
-        </form>
 
         <span class="close-search" id="closeSearch">&times;</span>
     </div>
