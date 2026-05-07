@@ -29,7 +29,7 @@ get_header();
             <div class="features-cards">
                 <div class="feature-card">
                     <div class="feature-icon icon-person">
-                        <img src="./images/Service.svg" alt="service" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/Service.svg" alt="service" />
                     </div>
                     <h3 class="feature-card-title">Personalized Service</h3>
                     <p class="feature-card-desc">

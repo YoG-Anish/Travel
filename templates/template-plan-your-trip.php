@@ -57,23 +57,23 @@ get_header();
             <?php
             $itinerary_query = new WP_Query(array(
                 'post_type' => 'travel_itinerary',
-                'posts_per_page' => 3,
+                'posts_per_page' => -1,
             )) ?>
             <?php
             if ($itinerary_query->have_posts()):
                 while ($itinerary_query->have_posts()): $itinerary_query->the_post(); ?>
                     <div class="place-card plan-card">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail(); ?>
-                            </a>
-                        <?php endif; ?>
-                        <div class="place-card-content">
-                            <h3 class="place-title"><?php the_title(); ?></h3>
-                            <p class="place-text">
-                                <?php echo wp_trim_words(get_the_content(), 7, '...'); ?>
-                            </p>
-                        </div>
+                            <?php endif; ?>
+                            <div class="place-card-content">
+                                <h3 class="place-title"><?php the_title(); ?></h3>
+                                <p class="place-text">
+                                    <?php echo wp_trim_words(get_the_content(), 7, '...'); ?>
+                                </p>
+                            </div>
+                        </a>
                         <div class="hover-details">
                             <?php
                             // 1. Define your taxonomy slugs and their human-readable labels

@@ -18,6 +18,7 @@ function travel_enqueue_scripts()
     wp_enqueue_style('travel-slider', get_template_directory_uri() . '/CSS/slider.css');
     wp_enqueue_style('travel-overflow', get_template_directory_uri() . '/CSS/overflow.css');
     wp_enqueue_style('travel-stories', get_template_directory_uri() . '/CSS/stories.css');
+    wp_enqueue_style('travel-details', get_template_directory_uri() . '/CSS/details.css');
     wp_enqueue_style('travel-things', get_template_directory_uri() . '/CSS/things.css');
     wp_enqueue_style('travel-testimonials', get_template_directory_uri() . '/CSS/testimonials.css');
     wp_enqueue_style('travel-bgoverlap', get_template_directory_uri() . '/CSS/bgoverlap.css');

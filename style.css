@@ -94,7 +94,7 @@ span.wpcf7-not-valid-tip { position: absolute; font-size: 11px; bottom: -18px; }
 /* 3. The Content (Overlay): Needs to sit on top */
 .about-video-wrapper .video-overlay {
     position: relative; /* Allows it to respect z-index */
-    z-index: 2;         /* High layer (2 is above 1) */
+    z-index: 100;         /* High layer (2 is above 1) */
     text-align: center;
 }
 
