@@ -518,6 +518,35 @@ function travel_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    // customizer for video in itinerary section
+    $wp_customize->add_section('travel_video_in_itinerary_section', array(
+        'title' => __('Video in Itinerary Settings', 'travel'),
+        'priority' => 35,
+    ));
+    
+    // upload video in itinerary
+    $wp_customize->add_setting('video_in_itinerary', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'video_in_itinerary_control', array(
+        'label' => __('Video in Itinerary', 'travel'),
+        'section' => 'travel_video_in_itinerary_section',
+        'settings' => 'video_in_itinerary',
+        'mime_type' => 'video',
+    )));
+
+    //if not video the add image in itienrary
+    $wp_customize->add_setting('itinerary_image', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'travel_header_image_control', array(
+        'label' => __('Background Image', 'travel'),
+        'section' => 'travel_video_in_itinerary_section',
+        'settings' => 'itinerary_image',
+        'mime_type' => 'image',
+    )));
     
 }
 add_action('customize_register', 'travel_customize_register');

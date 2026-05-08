@@ -16,13 +16,19 @@
         <?php
         $video_id = get_theme_mod('travel_header_video');
         $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
+        
 
         if ($video_url) : ?>
             <video id="mainHeroVideo" muted loop playsinline class="hero-bg">
                 <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
             </video>
         <?php else : ?>
-            <img src="<?php echo get_theme_mod('travel_header_image'); ?>" alt="background" class="hero-bg" />
+            <?php 
+            $image_id = get_theme_mod('travel_header_image');
+            $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
+            $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+            ?>
+            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="hero-bg " />
         <?php endif; ?>
 
         <div class="container hero-container">

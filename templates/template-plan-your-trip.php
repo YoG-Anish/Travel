@@ -8,6 +8,7 @@ get_header();
     <div class="container">
         <div class="section-header">
             <?php the_field('plan_heading'); ?>
+            <?php the_field('plan_description'); ?>
         </div>
     </div>
 </section>
@@ -25,16 +26,10 @@ get_header();
     <div class="container text-center">
         <div class="section-header plan-header">
             <img
-                src="<?php get_template_directory_uri(); ?>/images/Destination.svg"
+                src="<?php echo get_template_directory_uri(); ?>/images/Destination.svg"
                 class="header-bg-swash"
                 alt="" />
-            <h2 class="section-heading remove-margin-top">
-                Build Your <span class="highlight">itinerary</span>
-            </h2>
-            <p class="section-desc section-width-plan">
-                Design your day-to-day itinerary. Select the destinations you want
-                to visit and when you are planning to visit them.
-            </p>
+            <?php the_field('plan2_content'); ?>
         </div>
         <div class="plan-form-wrapper">
             <?php echo do_shortcode('[contact-form-7 id="5deb1a5" title="intenerery form"]'); ?>
@@ -44,14 +39,7 @@ get_header();
 <section class="plan-ideas section-padding">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-heading remove-margin-top">
-                <span class="highlight">Fresh Ideas</span> at your fingertips
-            </h2>
-            <p class="section-desc desc-width">
-                Wherever the path may lead you in the future, you will always find
-                something to make your heart sing. The greatest Slovenian
-                treasures await. How will you feel Slovenia?
-            </p>
+            <?php the_field('plan3_content'); ?>
         </div>
         <div class="places-grid">
             <?php

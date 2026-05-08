@@ -96,6 +96,7 @@ get_header();
                 ?>
             </div>
         </div>
+        <a href ="<?php echo get_field('see_all_places') ?>" class="btn btn-primary">See all places</a>
     </section>
 
     <?php get_template_part('template-parts/content', 'slider'); ?>

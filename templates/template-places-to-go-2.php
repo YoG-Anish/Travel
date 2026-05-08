@@ -7,15 +7,7 @@ get_header();
 <section id="places" class="places-section section-padding bg-light">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">GET INSPIRED</span>
-            <h2 class="section-heading">
-                <span class="highlight">Inspiring</span> Places
-            </h2>
-            <p class="section-desc desc-width">
-                Wherever the path may lead you in the future, you will always find
-                something to make your heart sing. The greatest Slovenian
-                treasures await. How will you feel Slovenia?
-            </p>
+            <?php the_field('placestogo2_content'); ?>
         </div>
         <div class="places-grid">
             <?php

@@ -24,7 +24,24 @@ get_header();
 <section class="about-video-section">
     <div class="container">
         <div class="about-video-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/cliffwater.png" alt="Landscape" />
+            <?php 
+            $video_id = get_theme_mod('video_in_itinerary');
+            $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
+
+            if ($video_url) : ?>
+                <video id="mainHeroVideo" muted loop playsinline class="hero-bg">
+                    <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                </video>
+            <?php else : ?>
+                <?php 
+                $image_id = get_theme_mod('itinerary_image');
+                $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
+                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                ?>
+                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="hero-bg" />
+            <?php endif;
+            ?>
+            
             <div class="video-wrapper video-overlay">
                 <div class="dots-circle"></div>
                 <button id="videoToggleButton" class="play-circle" aria-label="Toggle Video">
@@ -119,13 +136,7 @@ get_header();
 <section class="similar-trips-section section-padding">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-heading remove-margin-top">
-                <span class="highlight">Similar trips</span>
-            </h2>
-            <p class="section-desc desc-width">
-                Browse our Asia example trips and get in contact to start planning
-                your very own adventure.
-            </p>
+           <?php the_field('itinerary_last_section_content'); ?>
         </div>
         <div class="places-grid">
             <?php

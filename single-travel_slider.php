@@ -5,7 +5,7 @@ if (have_posts()) : ?>
         <section class="explore-banner">
             <div id="explore-splide" class="splide-explore">
                 <div class="banner-slide">
-                    <!-- Full-height banner image -->1
+                    <!-- Full-height banner image -->
                     <?php if (has_post_thumbnail()) : ?>
                         <img
                             src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"

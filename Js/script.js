@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   new Splide("#explore-splide", {
     type: "loop",
     autoplay: true,
-    interval: 5000,
+    interval: 2500,
     pauseOnHover: true,
     perPage: 1,
     arrows: true,
