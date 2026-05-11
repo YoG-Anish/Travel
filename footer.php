@@ -88,7 +88,7 @@
     </div>
     <div class="footer-bottom">
         <div class="container footer-bottom-design">
-            <p><?php echo get_theme_mod('footer_copyright_text'); ?></p>
+            <p>&copy; 2020 - <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
             <?php
             $footer_logo_id = get_theme_mod('footer_logo');
             

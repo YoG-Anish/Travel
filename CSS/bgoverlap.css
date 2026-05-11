@@ -9,7 +9,7 @@
   align-items: center; /* center horizontally */
 
   /* layered backgrounds */
-  background-image: url("../images/cloud.png"), url("../images/mountain.png");
+  background-image: url("../images/cloud.png");
   background-repeat: no-repeat, no-repeat;
   background-position:
     top center,

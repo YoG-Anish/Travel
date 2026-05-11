@@ -98,13 +98,13 @@ function travel_customize_register($wp_customize)
         'mime_type' => 'video',
     )));
 
-    // IF not Video show Image
+    // Header Image
     $wp_customize->add_setting('travel_header_image', array(
         'default' => '',
         'transport' => 'refresh',
     ));
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'travel_header_image_control', array(
-        'label' => __('If not Video show Image', 'travel'),
+        'label' => __('Header Image', 'travel'),
         'section' => 'travel_header_section',
         'settings' => 'travel_header_image',
         'mime_type' => 'image',
@@ -174,6 +174,7 @@ function travel_customize_register($wp_customize)
     $wp_customize->add_setting('travel_navbar_logo', array(
         'default' => '',
         'transport' => 'refresh',
+        1
     ));
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'travel_navbar_logo', array(
         'label' => __('Navbar Logo', 'travel'),
@@ -236,8 +237,8 @@ function travel_customize_register($wp_customize)
         'priority' => 31,
     ));
 
-     // testinomial title
-     $wp_customize->add_setting('testinomial_title', array(
+    // testinomial title
+    $wp_customize->add_setting('testinomial_title', array(
         'default' => '',
         'transport' => 'refresh',
     ));
@@ -276,7 +277,18 @@ function travel_customize_register($wp_customize)
     $wp_customize->add_section('travel_contact_section', array(
         'title' => __('Contact Form Settings', 'travel'),
         'priority' => 32,
-    )); 
+    ));
+
+    // contactform image
+    $wp_customize->add_setting('contactform_image', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'contactform_image_control', array(
+        'label' => __('Contact Form Image', 'travel'),
+        'section' => 'travel_contact_section',
+        'settings' => 'contactform_image',
+    )));
 
     // contactform tagline  
     $wp_customize->add_setting('contactform_tagline', array(
@@ -293,12 +305,12 @@ function travel_customize_register($wp_customize)
     // contactform heading
     $wp_customize->add_setting('contactform_heading', array(
         'default' => '',
-        'transport' => 'refresh',   
+        'transport' => 'refresh',
     ));
     $wp_customize->add_control('contactform_heading_control', array(
         'label' => __('Contact Form Heading', 'travel'),
         'section' => 'travel_contact_section',
-        'settings' => 'contactform_heading',    
+        'settings' => 'contactform_heading',
         'type' => 'text',
     ));
 
@@ -336,7 +348,7 @@ function travel_customize_register($wp_customize)
         'section' => 'travel_contact_section',
         'settings' => 'contactform_section2_phone_icon',
         'mime_type' => 'image',
-    )));    
+    )));
 
     // Contact section2 Call Us text
     $wp_customize->add_setting('contactform_section2_call_text', array(
@@ -369,7 +381,7 @@ function travel_customize_register($wp_customize)
     ));
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'contactform_section2_email_icon_control', array(
         'label' => __('Contact Section 2 Email Icon', 'travel'),
-        'section' => 'travel_contact_section',  
+        'section' => 'travel_contact_section',
         'settings' => 'contactform_section2_email_icon',
         'mime_type' => 'image',
     )));
@@ -379,7 +391,7 @@ function travel_customize_register($wp_customize)
         'default' => '',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control('contactform_section2_email_text_control', array(    
+    $wp_customize->add_control('contactform_section2_email_text_control', array(
         'label' => __('Contact Section 2 Email Text', 'travel'),
         'section' => 'travel_contact_section',
         'settings' => 'contactform_section2_email_text',
@@ -394,7 +406,7 @@ function travel_customize_register($wp_customize)
     $wp_customize->add_control('contactform_section2_email_control', array(
         'label' => __('Contact Section 2 Email Address', 'travel'),
         'section' => 'travel_contact_section',
-        'settings' => 'contactform_section2_email',     
+        'settings' => 'contactform_section2_email',
         'type' => 'text',
     ));
 
@@ -402,18 +414,6 @@ function travel_customize_register($wp_customize)
     $wp_customize->add_section('travel_footer_menu_section', array(
         'title' => __('Footer Menu Settings', 'travel'),
         'priority' => 33,
-    ));
-
-    // footer copyright text
-    $wp_customize->add_setting('footer_copyright_text', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control('footer_copyright_text_control', array(
-        'label' => __('Footer Copyright Text', 'travel'),
-        'section' => 'travel_footer_menu_section',
-        'settings' => 'footer_copyright_text',
-        'type' => 'text',
     ));
 
     // footer social media icons
@@ -439,7 +439,7 @@ function travel_customize_register($wp_customize)
         'section' => 'travel_footer_menu_section',
         'settings' => 'footer_facebook_url',
         'type' => 'text',
-    )); 
+    ));
 
     // footer instagram icon
     $wp_customize->add_setting('footer_instagram_icon', array(
@@ -463,7 +463,7 @@ function travel_customize_register($wp_customize)
         'section' => 'travel_footer_menu_section',
         'settings' => 'footer_instagram_url',
         'type' => 'text',
-    )); 
+    ));
 
     //  footer linkedin icon
     $wp_customize->add_setting('footer_linkedin_icon', array(
@@ -472,10 +472,10 @@ function travel_customize_register($wp_customize)
     ));
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'footer_linkedin_icon_control', array(
         'label' => __('Footer LinkedIn Icon', 'travel'),
-        'section' => 'travel_footer_menu_section',  
+        'section' => 'travel_footer_menu_section',
         'settings' => 'footer_linkedin_icon',
         'mime_type' => 'image',
-    )));    
+    )));
 
     // linkedin URL
     $wp_customize->add_setting('footer_linkedin_url', array(
@@ -506,7 +506,7 @@ function travel_customize_register($wp_customize)
         'title' => __('Google Maps Settings', 'travel'),
         'priority' => 34,
     ));
-    
+
     $wp_customize->add_setting('google_maps', array(
         'default' => '',
         'transport' => 'refresh',
@@ -523,31 +523,6 @@ function travel_customize_register($wp_customize)
         'title' => __('Video in Itinerary Settings', 'travel'),
         'priority' => 35,
     ));
-    
-    // upload video in itinerary
-    $wp_customize->add_setting('video_in_itinerary', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'video_in_itinerary_control', array(
-        'label' => __('Video in Itinerary', 'travel'),
-        'section' => 'travel_video_in_itinerary_section',
-        'settings' => 'video_in_itinerary',
-        'mime_type' => 'video',
-    )));
-
-    //if not video the add image in itienrary
-    $wp_customize->add_setting('itinerary_image', array(
-        'default' => '',
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'travel_header_image_control', array(
-        'label' => __('Background Image', 'travel'),
-        'section' => 'travel_video_in_itinerary_section',
-        'settings' => 'itinerary_image',
-        'mime_type' => 'image',
-    )));
-    
 }
 add_action('customize_register', 'travel_customize_register');
 
@@ -626,30 +601,6 @@ function travel_register_custom_post_types()
     );
     register_post_type('travel_testimonial', $args);
 
-    // Travel Sliders Custom Post Type
-    $labels = array(
-        'name' => 'Travel Sliders',
-        'singular_name' => 'Travel Slider',
-        'add_new' => 'Add New Travel Slider',
-        'add_new_item' => 'Add New Travel Slider',
-        'edit_item' => 'Edit Travel Slider',
-        'new_item' => 'New Travel Slider',
-        'view_item' => 'View Travel Slider',
-        'search_items' => 'Search Travel Sliders',
-        'not_found' => 'No travel sliders found',
-        'not_found_in_trash' => 'No travel sliders found in Trash',
-    );
-
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'show_in_rest' => true,
-        'menu_icon' => 'dashicons-images-alt2',
-    );
-    register_post_type('travel_slider', $args);
-
     // Travel Styles Custom Post Type
     $labels = array(
         'name' => 'Travel Styles',
@@ -698,7 +649,7 @@ function travel_register_custom_post_types()
         'rewrite' => array('slug' => 'destination'),
         'show_in_rest' => true,
     );
-    register_taxonomy('destination', array('travel_place', 'travel_slider'), $args);
+    register_taxonomy('destination', array('travel_place', 'travel_itinerary'), $args);
 
     // travel Itinerary cpt
     $labels = array(
@@ -804,3 +755,88 @@ function travel_register_custom_post_types()
 }
 add_action('init', 'travel_register_custom_post_types');
 
+/**
+ * Dynamically populate the CF7 select field with Destination Taxonomy terms
+ */
+add_filter('wpcf7_form_tag', 'nextstep_dynamic_itinerary_dropdown', 10, 2);
+function nextstep_dynamic_itinerary_dropdown($tag, $unused)
+{
+    // Only target our specific field name
+    if ($tag['name'] != 'destination-list') {
+        return $tag;
+    }
+
+    $terms = get_terms(array(
+        'taxonomy'   => 'destination', // Your taxonomy slug
+        'hide_empty' => false,
+    ));
+
+    if (! empty($terms) && ! is_wp_error($terms)) {
+        $tag['raw_values'] = array();
+        $tag['values']     = array();
+        $tag['labels']     = array();
+
+        // Add the placeholder
+        $tag['raw_values'][] = '';
+        $tag['values'][]     = '';
+        $tag['labels'][]     = 'Select destination';
+
+        foreach ($terms as $term) {
+            $tag['raw_values'][] = $term->name;
+            $tag['values'][]     = $term->name;
+            $tag['labels'][]     = $term->name;
+        }
+    }
+    return $tag;
+}
+
+function travel_custom_search_filter($query)
+{
+    // Only run on frontend search results for the main query
+    if (!is_admin() && $query->is_main_query() && $query->is_search()) {
+
+        $tax_query = array('relation' => 'AND');
+
+        // 1. Filter by Destination Taxonomy
+        if (!empty($_GET['dest'])) {
+            $tax_query[] = array(
+                'taxonomy' => 'destination',
+                'field'    => 'slug',
+                'terms'    => sanitize_text_field($_GET['dest']),
+            );
+        }
+
+        // 2. Filter by Preference Taxonomy
+        if (!empty($_GET['pref'])) {
+            $tax_query[] = array(
+                'taxonomy' => 'attraction-style',
+                'field'    => 'slug',
+                'terms'    => sanitize_text_field($_GET['pref']),
+            );
+        }
+
+        // Apply queries to the main search
+        $query->set('tax_query', $tax_query);
+    }
+}
+add_action('pre_get_posts', 'travel_custom_search_filter');
+
+
+function nextstep_enforce_search_criteria()
+{
+    // 1. Check if we are on a search request
+    if (is_search() && !is_admin()) {
+
+        // 2. If 'dest' is missing or empty in the URL
+        if (!isset($_GET['dest']) || empty($_GET['dest'])) {
+
+            // 3. Redirect them back to the "Plan Your Trip" page
+            // We add a 'error=no-dest' parameter to the URL
+            $url = add_query_arg('search_error', 'no-destination', wp_get_referer());
+
+            wp_safe_redirect($url);
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'nextstep_enforce_search_criteria');

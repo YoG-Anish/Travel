@@ -9,69 +9,74 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <?php 
+    <?php
     if (is_front_page()) { ?>
-        
-    <header id="home" class="hero-section">
-        <?php
-        $video_id = get_theme_mod('travel_header_video');
-        $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
-        
-
-        if ($video_url) : ?>
-            <video id="mainHeroVideo" muted loop playsinline class="hero-bg">
-                <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
-            </video>
-        <?php else : ?>
-            <?php 
-            $image_id = get_theme_mod('travel_header_image');
-            $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
-            $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+        <header id="home" class="hero-section">
+            <?php
+            $travel_header_image =  get_theme_mod('travel_header_image');
+            $header_image_url = $travel_header_image ? wp_get_attachment_url($travel_header_image) : '';
+            $header_image_alt = get_post_meta($travel_header_image, '_wp_attachment_image_alt', true);
             ?>
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="hero-bg " />
-        <?php endif; ?>
+            <img src="<?php echo esc_url($header_image_url); ?>" alt="<?php echo esc_attr($header_image_alt); ?>" class="hero-bg" />
 
-        <div class="container hero-container">
-            <div class="logo-wrapper">
-                <?php
-                $header_logo_id = get_theme_mod('travel_header_logo');
-                if ($header_logo_id) :
-                    $header_logo_url = wp_get_attachment_url($header_logo_id);
-                    $header_logo_alt = get_post_meta($header_logo_id, '_wp_attachment_image_alt', true);
-                ?>
-                    <a href=<?php echo esc_url(home_url('/')); ?>>
-                        <img src="<?php echo esc_url($header_logo_url); ?>" alt="<?php echo esc_attr($header_logo_alt); ?>" class="header-logo" />
-                    <?php endif; ?>
-                    </a>
-            </div>
-            <div class="hero-body">
-                <div class="hero-content">
-                    <span class="hero-subtitle">
-                        <?php echo esc_html(get_theme_mod('travel_header_tagline')); ?>
-                    </span>
-                    <h1 class="hero-title">
-                        <?php echo get_theme_mod('travel_header_heading'); ?>
-                    </h1>
-                    <div class="hero-cta">
-                        <button class="btn-tilted btn-primary-i">
-                            <a href="<?php echo esc_url(get_theme_mod('travel_header_button_url')); ?>" class="btn btn-primary">
-                                <?php echo esc_html(get_theme_mod('travel_header_button_text')); ?>
-                            </a>
-                        </button>
+            <div class="container hero-container">
+                <div class="logo-wrapper">
+                    <?php
+                    $header_logo_id = get_theme_mod('travel_header_logo');
+                    if ($header_logo_id) :
+                        $header_logo_url = wp_get_attachment_url($header_logo_id);
+                        $header_logo_alt = get_post_meta($header_logo_id, '_wp_attachment_image_alt', true);
+                    ?>
+                        <a href=<?php echo esc_url(home_url('/')); ?>>
+                            <img src="<?php echo esc_url($header_logo_url); ?>" alt="<?php echo esc_attr($header_logo_alt); ?>" class="header-logo" />
+                        <?php endif; ?>
+                        </a>
+                </div>
+                <div class="hero-body">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">
+                            <?php echo esc_html(get_theme_mod('travel_header_tagline')); ?>
+                        </span>
+                        <h1 class="hero-title">
+                            <?php echo get_theme_mod('travel_header_heading'); ?>
+                        </h1>
+                        <div class="hero-cta">
+                            <button class="btn-tilted btn-primary-i">
+                                <a href="<?php echo esc_url(get_theme_mod('travel_header_button_url')); ?>" class="btn btn-primary">
+                                    <?php echo esc_html(get_theme_mod('travel_header_button_text')); ?>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 1. The Trigger Button (Your HTML with an ID added) -->
+                    <div class="hero-video">
+                        <div class="video-wrapper">
+                            <div class="dots-circle"></div>
+                            <button class="play-circle" id="openPopup" aria-label="Play Video">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 2. The Simple Popup Modal (Keep this at the bottom of your file) -->
+                    <div id="videoModal" class="modal-overlay">
+                        <div class="modal-content">
+                            <!-- Close Button (X) -->
+                            <span class="close-btn" id="closePopup">&times;</span>
+
+                            <!-- Video Tag -->
+                            <?php
+                            $video_id = get_theme_mod('travel_header_video');
+                            $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
+                            if ($video_url) : ?>
+                                <video id="popupVideo" controls>
+                                    <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                                </video>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-video">
-                    <div class="video-wrapper">
-                        <div class="dots-circle"></div>
-                        <button id="videoToggleButton" class="play-circle" aria-label="Toggle Video">
-                            <!-- We add an ID to the icon specifically -->
-                            <i id="toggleIcon" class="fa-solid fa-play"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
-        </div>
-    </header>
+        </header>
     <?php } ?>
 
     <nav class="main-navigation">

@@ -130,3 +130,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Grab our elements
+    const openBtn  = document.getElementById('openPopup');
+    const closeBtn = document.getElementById('closePopup');
+    const modal    = document.getElementById('videoModal');
+    const video    = document.getElementById('popupVideo');
+
+    // 1. When Play is clicked: Show modal & Play video
+    if (openBtn) {
+        openBtn.addEventListener('click', function() {
+            modal.classList.add('open');
+            video.play();
+        });
+    }
+
+    // 2. When 'X' is clicked: Hide modal & Pause video
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('open');
+            video.pause();
+        });
+    }
+});

@@ -32,7 +32,69 @@ get_header();
             <?php the_field('plan2_content'); ?>
         </div>
         <div class="plan-form-wrapper">
-            <?php echo do_shortcode('[contact-form-7 id="5deb1a5" title="intenerery form"]'); ?>
+            <form role="search" method="get" class="itinerary-search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                <input type="hidden" name="s" value="" />
+
+                <!-- 1. Destination (Taxonomy) -->
+                <div class="form-group">
+                    <label>Destination</label>
+                    <select name="dest">
+                        <option value="" disabled selected hidden>Select destination</option>
+                        <?php
+                        $destinations = get_terms(['taxonomy' => 'destination', 'hide_empty' => false]);
+                        foreach ($destinations as $term) {
+                            echo '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <!-- 2. Date Range (Meta Fields) -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <input type="date" name="start_date" />
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <input type="date" name="end_date" />
+                    </div>
+                </div>
+
+                <!-- 3. Guests (Meta) & Activities (Taxonomy) -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select name="guests">
+                            <option value="" disabled selected hidden>Select number of guests</option>
+                            <option value="1">1 adult</option>
+                            <option value="2">2 adults</option>
+                            <option value="3">3 adults</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Activities Preferences</label>
+                        <select name="pref">
+                            <option value="" disabled selected hidden>Select preferences</option>
+                            <?php
+                            $prefs = get_terms(['taxonomy' => 'attraction-style', 'hide_empty' => false]);
+                            foreach ($prefs as $term) {
+                                echo '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- Hidden input to tell WP we only want to search 'travel_itinerary' CPT -->
+                <input type="hidden" name="post_type" value="travel_itinerary" />
+
+                <?php if (isset($_GET['search_error']) && $_GET['search_error'] === 'no-destination') : ?>
+                    <p style="color: red;">Error: You must select a destination to see results!</p>
+                <?php endif; ?>
+                <button type="submit" class="btn-see-trip">SEE YOUR TRIP</button>
+            </form>
         </div>
     </div>
 </section>

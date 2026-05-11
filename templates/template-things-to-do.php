@@ -13,7 +13,7 @@ get_header();
         <div class="things-to-do-cards">
             <?php
             $travel_places = new WP_Query(array(
-                'post_type' => 'travel_place',
+                'post_type' => 'travel_style',
                 'posts_per_page' => -1,
             ))
             ?>
@@ -31,7 +31,10 @@ get_header();
                         <p>
                             <?php echo wp_trim_words(get_the_content(), 12, '...'); ?>
                         </p>
-                        <button class="btn-tilted btn-primary-i">Discover More</button>
+                        <button class="btn-tilted btn-primary-i">
+                            <a href="<?php the_permalink(); ?>" class="discover-link">Discover More
+                            </a>
+                        </button>
                     </div>
             <?php endwhile;
                 wp_reset_postdata();

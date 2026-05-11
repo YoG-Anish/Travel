@@ -11,9 +11,12 @@ get_header();
         </div>
         <div class="places-grid">
             <?php
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
             $travel_places = new WP_Query(array(
                 'post_type' => 'travel_place',
                 'posts_per_page' => 3,
+                'paged' => $paged,
             ));
             if ($travel_places->have_posts()) :
                 while ($travel_places->have_posts()) : $travel_places->the_post();
@@ -33,9 +36,14 @@ get_header();
                     </div>
                 <?php endwhile; ?>
                 <div class="pagination-trips">
-                    <?php echo paginate_links(array(
-                        'total' => $travel_places->max_num_pages
-                    )); ?>
+                    <?php
+                    echo paginate_links(array(
+                        'total' => $travel_places->max_num_pages,
+                        'current' => $paged,
+                        'prev_text' => '« Prev',
+                        'next_text' => 'Next »',
+                    ));
+                    ?>
                 </div>
             <?php wp_reset_postdata();
             else :

@@ -6,7 +6,17 @@ get_header();
 ?>
 
 <section class="overview-banner-section">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/reflection.png" alt="Back Ground" class="hero-bg" />
+    <?php
+    $image_id = get_field('itinerary_banner');
+    if ($image_id) { ?>
+        <img src="<?php echo esc_url($image_id['url']); ?>" alt="<?php echo esc_attr($image_id['alt']); ?>" class="hero-bg" />
+    <?php } else { ?>
+        <div>
+            <h1 style="text-align: center; font-color: #000000;"><?php the_title(); ?></h1>
+        </div>';
+    <?php } ?>
+
+
     <div class="container">
         <div class="section-header">
             <span class="overview-section-tag"><?php the_field('total_days'); ?></span>
@@ -24,30 +34,23 @@ get_header();
 <section class="about-video-section">
     <div class="container">
         <div class="about-video-wrapper">
-            <?php 
-            $video_id = get_theme_mod('video_in_itinerary');
-            $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
+            <?php
+            $video_id = get_field('itinerary_video');
 
-            if ($video_url) : ?>
+            if ($video_id) : ?>
                 <video id="mainHeroVideo" muted loop playsinline class="hero-bg">
-                    <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                    <source src="<?php echo esc_url($video_id['url']); ?>" type="video/mp4">
                 </video>
-            <?php else : ?>
-                <?php 
-                $image_id = get_theme_mod('itinerary_image');
-                $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
-                $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                ?>
-                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="hero-bg" />
+
+
+                <div class="video-wrapper video-overlay">
+                    <div class="dots-circle"></div>
+                    <button id="videoToggleButton" class="play-circle" aria-label="Toggle Video">
+                        <i id="toggleIcon" class="fa-solid fa-play"></i>
+                    </button>
+                </div>
             <?php endif;
             ?>
-            
-            <div class="video-wrapper video-overlay">
-                <div class="dots-circle"></div>
-                <button id="videoToggleButton" class="play-circle" aria-label="Toggle Video">
-                    <i id="toggleIcon" class="fa-solid fa-play"></i>
-                </button>
-            </div>
         </div>
     </div>
 </section>
@@ -58,7 +61,7 @@ get_header();
                 <?php the_field('itinerary_column1'); ?>
             </div>
             <div class="highlight-card">
-                <?php the_field('itinerary_column2'); ?>s
+                <?php the_field('itinerary_column2'); ?>
             </div>
         </div>
         <div class="highlight-timeline">
@@ -104,39 +107,41 @@ get_header();
         </div>
     </div>
 </section>
-<section class="example-trips-section section-padding">
-    <div class="container">
-        <?php
-        $payment_section = get_field('payment_section');
-        $payment_heading = $payment_section['payment_heading'];
-        $payment_column1 = $payment_section['payment_column1'];
-        $payment_column2 = $payment_section['payment_column2'];
-        ?>
-        <div class="section-header text-center">
-            <?php echo $payment_heading ?>
-        </div>
-        <div class="split-layout">
-            <!-- Left Side -->
-            <div class="section-left">
-                <?php echo $payment_column1 ?>
+<?php
+$payment_section = get_field('payment_section');
+$payment_heading = $payment_section['payment_heading'];
+$payment_column1 = $payment_section['payment_column1'];
+$payment_column2 = $payment_section['payment_column2'];
+?>
+<?php if ($payment_heading || $payment_column1 || $payment_column2) : ?>
+    <section class="example-trips-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <?php echo $payment_heading ?>
             </div>
+            <div class="split-layout">
+                <!-- Left Side -->
+                <div class="section-left">
+                    <?php echo $payment_column1 ?>
+                </div>
 
-            <!-- Divider Middle -->
-            <div class="divider">
-                <div class="or-circle">or</div>
-            </div>
+                <!-- Divider Middle -->1
+                <div class="divider">
+                    <div class="or-circle">or</div>
+                </div>
 
-            <!-- Right Side  -->
-            <div class="section-right">
-                <?php echo $payment_column2 ?>
+                <!-- Right Side  -->
+                <div class="section-right">
+                    <?php echo $payment_column2 ?>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 <section class="similar-trips-section section-padding">
     <div class="container">
         <div class="section-header">
-           <?php the_field('itinerary_last_section_content'); ?>
+            <?php the_field('itinerary_last_section_content'); ?>
         </div>
         <div class="places-grid">
             <?php
