@@ -822,7 +822,7 @@ function travel_custom_search_filter($query)
 add_action('pre_get_posts', 'travel_custom_search_filter');
 
 
-function nextstep_enforce_search_criteria()
+function travel_enforce_search_criteria()
 {
     // 1. Check if we are on a search request
     if (is_search() && !is_admin()) {
@@ -839,4 +839,15 @@ function nextstep_enforce_search_criteria()
         }
     }
 }
-add_action('template_redirect', 'nextstep_enforce_search_criteria');
+add_action('template_redirect', 'travel_enforce_search_criteria');
+
+// Register Elementor widgets
+
+function register_my_custom_widget( $widgets_manager ) {
+    // Path to your widget file
+    require_once( get_template_directory() . '/inc/elementor-widgets/my-test-widget.php' );
+
+    // Register the widget class
+    $widgets_manager->register( new \My_Custom_Test_Widget() );
+}
+add_action( 'elementor/widgets/register', 'register_my_custom_widget' );

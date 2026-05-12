@@ -8,6 +8,7 @@ get_header();
     <div class="container">
         <div class="section-header">
             <?php echo get_field('about_heading'); ?>
+            <?php the_content(); ?>
         </div>
     </div>
 </section>
